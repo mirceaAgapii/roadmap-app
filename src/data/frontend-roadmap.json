@@ -1,0 +1,80 @@
+{
+    "generalTitle": "Frontend Development Roadmap",
+    "roadmap": [
+      {
+        "title": "HTML & CSS",
+        "description": "Learn the foundational technologies of the web, HTML for structure and CSS for styling. Master concepts such as semantic HTML, flexbox, grid, and responsive design to build modern web interfaces.",
+        "resources": [
+          { "text": "MDN HTML Guide", "url": "https://developer.mozilla.org/en-US/docs/Web/HTML" },
+          { "text": "CSS Tricks", "url": "https://css-tricks.com/" }
+        ],
+        "children": [
+          {
+            "title": "CSS Preprocessors",
+            "description": "Explore SASS and LESS to enhance styling capabilities with variables, mixins, and nested rules.",
+            "resources": [{ "text": "SASS Docs", "url": "https://sass-lang.com/documentation" }]
+          },
+          {
+            "title": "CSS Frameworks",
+            "description": "Understand frameworks like Bootstrap, Tailwind CSS, and Material UI for faster and more consistent styling.",
+            "resources": [{ "text": "Bootstrap Docs", "url": "https://getbootstrap.com/" }]
+          },
+          {
+            "title": "Responsive Design",
+            "description": "Master media queries and mobile-first design principles to create adaptable layouts.",
+            "resources": [{ "text": "Responsive Design Guide", "url": "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design" }]
+          }
+        ]
+      },
+      {
+        "title": "JavaScript Basics",
+        "description": "Learn JavaScript syntax, ES6+ features, DOM manipulation, event handling, and asynchronous programming concepts.",
+        "resources": [
+          { "text": "MDN JavaScript Guide", "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript" }
+        ],
+        "children": [
+          {
+            "title": "JavaScript ES6+",
+            "description": "Explore modern JavaScript features like let/const, template literals, spread/rest operators, and async/await.",
+            "resources": [{ "text": "ES6 Features", "url": "https://es6.io/" }]
+          },
+          {
+            "title": "DOM Manipulation",
+            "description": "Understand how to manipulate the DOM using vanilla JavaScript methods and event listeners.",
+            "resources": [{ "text": "DOM Guide", "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model" }]
+          },
+          {
+            "title": "Asynchronous JavaScript",
+            "description": "Master promises, async/await, and fetch API for handling asynchronous operations.",
+            "resources": [{ "text": "Async JS Guide", "url": "https://javascript.info/async" }]
+          }
+        ]
+      },
+      {
+        "title": "Frontend Frameworks",
+        "description": "Learn popular frontend frameworks such as React, Vue, and Angular to build dynamic web applications.",
+        "resources": [
+          { "text": "React Official Docs", "url": "https://reactjs.org/docs/getting-started.html" },
+          { "text": "Vue Official Docs", "url": "https://vuejs.org/guide/introduction.html" }
+        ],
+        "children": [
+          {
+            "title": "React.js",
+            "description": "Understand JSX, hooks, component-based architecture, state management, and routing.",
+            "resources": [{ "text": "React Docs", "url": "https://reactjs.org/docs/getting-started.html" }]
+          },
+          {
+            "title": "Vue.js",
+            "description": "Learn Vue directives, computed properties, Vue Router, and Vuex for state management.",
+            "resources": [{ "text": "Vue Docs", "url": "https://vuejs.org/guide/introduction.html" }]
+          },
+          {
+            "title": "Angular",
+            "description": "Get familiar with TypeScript, Angular CLI, dependency injection, and RxJS.",
+            "resources": [{ "text": "Angular Docs", "url": "https://angular.io/docs" }]
+          }
+        ]
+      }
+    ]
+  }
+  
