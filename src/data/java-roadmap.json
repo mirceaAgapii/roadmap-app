@@ -40,6 +40,16 @@
           ]
         },
         {
+          "title": "Android Development",
+          "description": "Some Description",
+          "resources": [
+            {
+              "text": "OOP Concepts in Java",
+              "url": "https://www.journaldev.com/1828/java-oops-concepts"
+            }
+          ]
+        },
+        {
           "title": "Exception Handling",
           "description": "Exception Handling is an essential part of writing robust Java applications. In this section, developers will learn how to handle runtime errors, preventing them from crashing the program. The primary mechanism for managing errors in Java is through the use of try-catch blocks. When an error occurs, an exception is thrown, and the program control moves to the corresponding catch block. Developers will learn to handle predefined exceptions like NullPointerException, as well as how to create and throw custom exceptions tailored to their specific needs. This section also covers the importance of exception hierarchy and the use of finally blocks to execute code after an exception, ensuring proper cleanup.",
           "resources": [
