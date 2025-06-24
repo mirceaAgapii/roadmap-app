@@ -1,0 +1,210 @@
+{
+  "generalTitle": "Engineering",
+  "roadmap": [
+    {
+      "title": "Trainee",
+      "children": [
+        {
+          "title": "Introduction to Engineering Disciplines",
+          "description": "An overview of the main branches of engineering: mechanical, electrical, civil, and software.",
+          "resources": [
+            {
+              "text": "What is Engineering?",
+              "url": "https://www.engineering.com/Library/ArticlesPage/tabid/85/ArticleID/137/What-is-Engineering.aspx"
+            },
+            {
+              "text": "Introduction to Engineering - MIT OCW",
+              "url": "https://ocw.mit.edu/courses/engineering-systems-division/esd-00-introduction-to-engineering-systems-spring-2011/"
+            }
+          ],
+          "tags": [
+            "Core",
+            "Intro"
+          ]
+        },
+        {
+          "title": "Technical Drawing and CAD Basics",
+          "description": "Understanding how to interpret and create technical drawings using CAD tools like AutoCAD or SolidWorks.",
+          "resources": [
+            {
+              "text": "AutoCAD Tutorials",
+              "url": "https://www.autodesk.com/learning"
+            },
+            {
+              "text": "SolidWorks for Beginners",
+              "url": "https://www.solidworks.com/sw/resources/getting-started.htm"
+            }
+          ],
+          "tags": [
+            "Core",
+            "Tools"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Junior",
+      "children": [
+        {
+          "title": "Statics and Dynamics",
+          "description": "The foundation of mechanical engineering \u2013 analyzing forces, motion, and equilibrium in physical systems.",
+          "resources": [
+            {
+              "text": "Khan Academy - Statics",
+              "url": "https://www.khanacademy.org/science/statics"
+            },
+            {
+              "text": "MIT OCW - Dynamics",
+              "url": "https://ocw.mit.edu/courses/mechanical-engineering/2-003sc-engineering-dynamics-fall-2011/"
+            }
+          ],
+          "tags": [
+            "Mechanical",
+            "Core"
+          ]
+        },
+        {
+          "title": "Basic Circuit Theory",
+          "description": "The essentials of voltage, current, resistance, Ohm\u2019s Law, and solving basic electrical circuits.",
+          "resources": [
+            {
+              "text": "All About Circuits",
+              "url": "https://www.allaboutcircuits.com/"
+            },
+            {
+              "text": "DC Circuit Basics",
+              "url": "https://learn.sparkfun.com/tutorials/what-is-electricity/all"
+            }
+          ],
+          "tags": [
+            "Electrical",
+            "Core"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Middle",
+      "children": [
+        {
+          "title": "Mechanical Components and Systems",
+          "description": "Deep dive into gears, belts, levers, bearings, shafts and their application in machine design.",
+          "resources": [
+            {
+              "text": "MIT OCW Machine Elements",
+              "url": "https://ocw.mit.edu/courses/mechanical-engineering/2-72-elements-of-mechanical-design-spring-2009/"
+            },
+            {
+              "text": "Machine Design Handbook",
+              "url": "https://www.engineersedge.com/machine_design.htm"
+            }
+          ],
+          "tags": [
+            "Mechanical",
+            "Recommended"
+          ]
+        },
+        {
+          "title": "AC Circuits and Power Systems",
+          "description": "Explore sinusoidal waveforms, impedance, power factor, transformers and 3-phase systems.",
+          "resources": [
+            {
+              "text": "Electrical4U - AC Theory",
+              "url": "https://www.electrical4u.com/ac-circuits/"
+            },
+            {
+              "text": "Power System Basics",
+              "url": "https://nptel.ac.in/courses/108/105/108105067/"
+            }
+          ],
+          "tags": [
+            "Electrical",
+            "Core"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Middle+",
+      "children": [
+        {
+          "title": "Fluid Mechanics",
+          "description": "Principles of fluid behavior in pipes, pumps, and ventilation systems; essential for both mechanical and HVAC engineers.",
+          "resources": [
+            {
+              "text": "Introduction to Fluid Mechanics",
+              "url": "https://www.khanacademy.org/science/physics/fluids"
+            },
+            {
+              "text": "NPTEL Fluid Mechanics",
+              "url": "https://nptel.ac.in/courses/112/105/112105171/"
+            }
+          ],
+          "tags": [
+            "Mechanical",
+            "Advanced"
+          ]
+        },
+        {
+          "title": "Electrical Machines and Drives",
+          "description": "Covers electric motors, generators, drives and their industrial applications.",
+          "resources": [
+            {
+              "text": "NPTEL Electrical Machines",
+              "url": "https://nptel.ac.in/courses/108/105/108105155/"
+            },
+            {
+              "text": "Electric Drives Tutorial",
+              "url": "https://www.electricaleasy.com/2014/01/electric-drive.html"
+            }
+          ],
+          "tags": [
+            "Electrical",
+            "Advanced"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Senior",
+      "children": [
+        {
+          "title": "Finite Element Analysis (FEA)",
+          "description": "Simulation-based mechanical design validation using FEA tools like ANSYS or Abaqus.",
+          "resources": [
+            {
+              "text": "FEA Basics - SimScale",
+              "url": "https://www.simscale.com/blog/2017/12/what-is-finite-element-analysis/"
+            },
+            {
+              "text": "Introduction to ANSYS",
+              "url": "https://courses.ansys.com/"
+            }
+          ],
+          "tags": [
+            "Mechanical",
+            "Simulation"
+          ]
+        },
+        {
+          "title": "Power Distribution and Protection",
+          "description": "Advanced study of electrical power distribution systems, protection mechanisms and substation design.",
+          "resources": [
+            {
+              "text": "Protection & Switchgear",
+              "url": "https://nptel.ac.in/courses/108/105/108105068/"
+            },
+            {
+              "text": "IEEE Power Distribution Guide",
+              "url": "https://ieeexplore.ieee.org/document/7581720"
+            }
+          ],
+          "tags": [
+            "Electrical",
+            "Expert"
+          ]
+        }
+      ]
+    }
+  ]
+}

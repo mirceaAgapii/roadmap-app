@@ -1,89 +1,102 @@
 <template>
-    <div class="roadmap" @click="handleClickOutside">
-      <h1>{{ selectedRoadmap.generalTitle }}</h1>
-      
-      <!-- Tabs for selecting roadmaps -->
-      <div class="roadmap-tabs">
-        <button v-for="(roadmap, index) in roadmaps" :key="index" @click="selectRoadmap(index)" :class="{ active: index === selectedRoadmapIndex }">
-          {{ roadmap.generalTitle }}
-        </button>
-      </div>
-      
-      <div class="roadmap-container">
-        <svg id="svgContainer" class="svg-lines"></svg>
-  
-        <div v-for="(item, index) in selectedRoadmap.roadmap" :key="index" class="roadmap-item-container">
-          <!-- Parent -->
-          <div :id="'parent-' + index" class="roadmap-item-parent">
-            <div class="roadmap-item" @click.stop="selectItem(item)">
-              <h2>{{ item.title }}</h2>
-            </div>
-          </div>
-  
-          <!-- Children -->
-          <div v-if="item.children" class="roadmap-children">
-            <div
-              v-for="(child, childIndex) in item.children"
-              :key="childIndex"
-              class="roadmap-item-container"
-            >
-              <div :id="'child-' + index + '-' + childIndex" class="roadmap-item" @click.stop="selectItem(child)">
-                <h2>{{ child.title }}</h2>
-              </div>
-            </div>
+  <div class="roadmap" v-if="selectedRoadmap" @click="handleClickOutside">
+    <h1>{{ selectedRoadmap.generalTitle }}</h1>
+
+    <!-- Tabs for selecting roadmaps -->
+    <div class="roadmap-tabs">
+      <button v-for="(roadmap, index) in roadmaps" :key="index" @click="selectRoadmap(index)"
+        :class="{ active: index === selectedRoadmapIndex }">
+        {{ roadmap.generalTitle }}
+      </button>
+    </div>
+
+    <div class="roadmap-container">
+      <svg id="svgContainer" class="svg-lines"></svg>
+
+      <div v-for="(item, index) in selectedRoadmap.roadmap" :key="index" class="roadmap-item-container">
+        <!-- Parent -->
+        <div :id="'parent-' + index" class="roadmap-item-parent">
+          <div class="roadmap-item" @click.stop="selectItem(item)">
+            <h2>{{ item.title }}</h2>
           </div>
         </div>
-      </div>
 
-      <!-- Overlay -->
-      <div v-if="selectedItem" class="overlay" @click="selectedItem = null"></div>
-
-  
-      <!-- Sidebar with selected item information -->
-      <div ref="sidebar" class="sidebar" :class="{ show: selectedItem }">
-        <h2 v-if="selectedItem">{{ selectedItem.title }}</h2>
-        <p v-if="selectedItem">{{ selectedItem.description }}</p>
-
-        <!-- Resources Footer -->
-        <div v-if="selectedItem && selectedItem.resources && selectedItem.resources.length" class="sidebar-footer">
-          <h3>Additional Resources</h3>
-          <ul>
-            <li v-for="(resource, index) in selectedItem.resources" :key="index">
-              <a :href="resource.url" target="_blank">{{ resource.text }}</a>
-            </li>
-          </ul>
+        <!-- Children -->
+        <div v-if="item.children" class="roadmap-children">
+          <div v-for="(child, childIndex) in item.children" :key="childIndex" class="roadmap-item-container">
+            <div :id="'child-' + index + '-' + childIndex" class="roadmap-item" @click.stop="selectItem(child)">
+              <h2>{{ child.title }}</h2>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Overlay -->
+    <div v-if="selectedItem" class="overlay" @click="selectedItem = null"></div>
+
+
+    <!-- Sidebar with selected item information -->
+    <div ref="sidebar" class="sidebar" :class="{ show: selectedItem }">
+      <h2 v-if="selectedItem">{{ selectedItem.title }}</h2>
+      <p v-if="selectedItem">{{ selectedItem.description }}</p>
+
+      <!-- Resources Footer -->
+      <div v-if="selectedItem && selectedItem.resources && selectedItem.resources.length" class="sidebar-footer">
+        <h3>Additional Resources</h3>
+        <ul>
+          <li v-for="(resource, index) in selectedItem.resources" :key="index">
+            <a :href="resource.url" target="_blank">{{ resource.text }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 import { nextTick } from "vue";
-import javaRoadmap from "../data/java-roadmap.json";
-import frontendRoadmap from "../data/frontend-roadmap.json";
 
 export default {
   name: "Roadmap",
   data() {
     return {
-      roadmaps: [javaRoadmap, frontendRoadmap],
+      roadmaps: [],
       selectedRoadmapIndex: 0,
       selectedItem: null,
     };
   },
   computed: {
     selectedRoadmap() {
-      return this.roadmaps[this.selectedRoadmapIndex];
+      return this.roadmaps.length > 0 ? this.roadmaps[this.selectedRoadmapIndex] : null;
     }
   },
   mounted() {
-    this.drawLines();
+    this.loadRoadmaps();
     window.addEventListener("resize", this.drawLines);
   },
   beforeUnmount() {
     window.removeEventListener("resize", this.drawLines);
   },
   methods: {
+    async loadRoadmaps() {
+      try {
+        const indexRes = await fetch('/roadmaps/index.json');
+        const files = await indexRes.json();
+
+        const roadmapPromises = files.map(file =>
+          fetch(`/roadmaps/${file}`).then(res => res.json())
+        );
+
+        this.roadmaps = await Promise.all(roadmapPromises);
+
+        this.$nextTick(() => {
+          this.drawLines();
+        });
+      } catch (err) {
+        console.error("Failed to load roadmaps:", err);
+      }
+    },
     selectRoadmap(index) {
       this.selectedRoadmapIndex = index;
       this.selectedItem = null;
@@ -130,38 +143,38 @@ export default {
       });
     },
     createLine(svg, x1, y1, x2, y2) {
-        // If the parent and child are at the same Y level, draw a straight line
-        if (y1 === y2) {
-            const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-            line.setAttribute("x1", x1);
-            line.setAttribute("y1", y1);
-            line.setAttribute("x2", x2);
-            line.setAttribute("y2", y2);
-            line.setAttribute("stroke", "#0388fc");
-            line.setAttribute("stroke-width", "3");
-            line.setAttribute("stroke-dasharray", "0,6");  // Dashed line pattern (5px dash, 5px gap)
-            line.setAttribute("stroke-linecap", "round");
-            svg.appendChild(line);
-        } else {
-            // Calculate control points for the cubic Bézier curve
-            const controlX1 = x1 + 50;  // Slightly offset for the first control point
-            const controlY1 = y1 + (y2 > y1 ? 50 : -50); // Move the first control point up or down
-            
-            const controlX2 = x2 - 50;  // Slightly offset for the second control point
-            const controlY2 = y2 + (y2 > y1 ? -50 : 50); // Move the second control point up or down
+      // If the parent and child are at the same Y level, draw a straight line
+      if (y1 === y2) {
+        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        line.setAttribute("x1", x1);
+        line.setAttribute("y1", y1);
+        line.setAttribute("x2", x2);
+        line.setAttribute("y2", y2);
+        line.setAttribute("stroke", "#0388fc");
+        line.setAttribute("stroke-width", "3");
+        line.setAttribute("stroke-dasharray", "0,6");  // Dashed line pattern (5px dash, 5px gap)
+        line.setAttribute("stroke-linecap", "round");
+        svg.appendChild(line);
+      } else {
+        // Calculate control points for the cubic Bézier curve
+        const controlX1 = x1 + 50;  // Slightly offset for the first control point
+        const controlY1 = y1 + (y2 > y1 ? 50 : -50); // Move the first control point up or down
 
-            // Create a path element for the cubic Bézier curve
-            const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-            const pathData = `M ${x1} ${y1} C ${controlX1} ${controlY1} ${controlX2} ${controlY2} ${x2} ${y2}`;
-            path.setAttribute("d", pathData);  // Set the path data for the Bézier curve
-            path.setAttribute("stroke", "#0388fc");
-            path.setAttribute("stroke-width", "3");
-            path.setAttribute("fill", "transparent");  // Don't fill the curve, just stroke it
-            path.setAttribute("stroke-dasharray", "0,6");  // Dashed line pattern (5px dash, 5px gap)
-            path.setAttribute("stroke-linecap", "round");
+        const controlX2 = x2 - 50;  // Slightly offset for the second control point
+        const controlY2 = y2 + (y2 > y1 ? -50 : 50); // Move the second control point up or down
 
-            svg.appendChild(path);
-        }
+        // Create a path element for the cubic Bézier curve
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        const pathData = `M ${x1} ${y1} C ${controlX1} ${controlY1} ${controlX2} ${controlY2} ${x2} ${y2}`;
+        path.setAttribute("d", pathData);  // Set the path data for the Bézier curve
+        path.setAttribute("stroke", "#0388fc");
+        path.setAttribute("stroke-width", "3");
+        path.setAttribute("fill", "transparent");  // Don't fill the curve, just stroke it
+        path.setAttribute("stroke-dasharray", "0,6");  // Dashed line pattern (5px dash, 5px gap)
+        path.setAttribute("stroke-linecap", "round");
+
+        svg.appendChild(path);
+      }
     },
   },
 };
@@ -253,7 +266,8 @@ body,
   top: 0;
   right: 0;
   width: 300px;
-  height: 100%; /* Extend from top to bottom */
+  height: 100%;
+  /* Extend from top to bottom */
   background-color: #f9f9f9;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -261,7 +275,8 @@ body,
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   opacity: 0;
   pointer-events: none;
-  z-index: 1000; /* Ensure it is above the overlay */
+  z-index: 1000;
+  /* Ensure it is above the overlay */
 }
 
 .sidebar.show {
@@ -339,7 +354,9 @@ body,
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Grey out the rest of the screen */
-  z-index: 999; /* Ensure it is below the sidebar */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Grey out the rest of the screen */
+  z-index: 999;
+  /* Ensure it is below the sidebar */
 }
 </style>

@@ -1,0 +1,920 @@
+{
+  "generalTitle": "Java",
+  "roadmap": [
+    {
+      "title": "Trainee",
+      "children": [
+        {
+          "title": "What is Java?",
+          "description": "Understand the purpose and basic use cases of the Java programming language.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Java 8 in Action. Lambdas, Streams, and functional-style programming [Raoul-Gabriel Urma, Mario Fusco, Alan Mycroft]"
+            },
+            {
+              "text": "Effective Java [Joshua Bloch]"
+            },
+            {
+              "text": "Java: The Complete Reference [Herbert Schildt]"
+            },
+            {
+              "text": "OCP Oracle Certified Professional Java SE 17 Developer Study Guide [Jeanne Boyarsky, Scott Selikoff]"
+            },
+            {
+              "text": "The Well-Grounded Java Developer, Second Edition [Benjamin Evans, Martijn Verburg, Jason Clark]"
+            }
+          ]
+        },
+        {
+          "title": "Installing Java & IDE",
+          "description": "Install JDK and set up a development environment using IntelliJ or Eclipse.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Java 8 in Action. Lambdas, Streams, and functional-style programming [Raoul-Gabriel Urma, Mario Fusco, Alan Mycroft]"
+            },
+            {
+              "text": "Effective Java [Joshua Bloch]"
+            },
+            {
+              "text": "Java: The Complete Reference [Herbert Schildt]"
+            },
+            {
+              "text": "OCP Oracle Certified Professional Java SE 17 Developer Study Guide [Jeanne Boyarsky, Scott Selikoff]"
+            },
+            {
+              "text": "The Well-Grounded Java Developer, Second Edition [Benjamin Evans, Martijn Verburg, Jason Clark]"
+            }
+          ]
+        },
+        {
+          "title": "Your First Java Program",
+          "description": "Write, compile and run a simple Hello World Java program.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Java 8 in Action. Lambdas, Streams, and functional-style programming [Raoul-Gabriel Urma, Mario Fusco, Alan Mycroft]"
+            },
+            {
+              "text": "Effective Java [Joshua Bloch]"
+            },
+            {
+              "text": "Java: The Complete Reference [Herbert Schildt]"
+            },
+            {
+              "text": "OCP Oracle Certified Professional Java SE 17 Developer Study Guide [Jeanne Boyarsky, Scott Selikoff]"
+            },
+            {
+              "text": "The Well-Grounded Java Developer, Second Edition [Benjamin Evans, Martijn Verburg, Jason Clark]"
+            }
+          ]
+        },
+        {
+          "title": "Java Syntax Basics",
+          "description": "Understand variables, data types, conditionals, loops and basic operators.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Java 8 in Action. Lambdas, Streams, and functional-style programming [Raoul-Gabriel Urma, Mario Fusco, Alan Mycroft]"
+            },
+            {
+              "text": "Effective Java [Joshua Bloch]"
+            },
+            {
+              "text": "Java: The Complete Reference [Herbert Schildt]"
+            },
+            {
+              "text": "OCP Oracle Certified Professional Java SE 17 Developer Study Guide [Jeanne Boyarsky, Scott Selikoff]"
+            },
+            {
+              "text": "The Well-Grounded Java Developer, Second Edition [Benjamin Evans, Martijn Verburg, Jason Clark]"
+            }
+          ]
+        },
+        {
+          "title": "Using the Terminal",
+          "description": "Navigate the file system and run Java programs from the terminal.",
+          "tags": [
+            "Core"
+          ],
+          "resources": []
+        },
+        {
+          "title": "Intro to Git & Version Control",
+          "description": "Understand the purpose of version control and basic Git commands.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Git Cheatsheet \u2013 GitHub"
+            },
+            {
+              "text": "The Phoenix Project: A Novel About IT, DevOps, and Helping Your Business Win [Gene Kim, George Spafford, Kevin Behr]"
+            }
+          ]
+        },
+        {
+          "title": "What is an API?",
+          "description": "Learn what APIs are and why they are useful in modern development.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Java Persistence with Hibernate [Christian Bauer, Gavin King]"
+            },
+            {
+              "text": "Spring Boot Crash Course - Java Brains"
+            },
+            {
+              "text": "REST API Design Rulebook [Mark Masse]"
+            },
+            {
+              "text": "RESTful Web Services [Leonard Richardson, Sam Ruby]"
+            },
+            {
+              "text": "Spring Boot in Action [Craig Walls]"
+            }
+          ]
+        },
+        {
+          "title": "Basic Debugging",
+          "description": "Use simple debugging techniques to identify and fix errors.",
+          "tags": [
+            "Core"
+          ],
+          "resources": []
+        }
+      ]
+    },
+    {
+      "title": "Junior",
+      "children": [
+        {
+          "title": "Java Fundamentals",
+          "description": "Basic Java syntax, OOP principles, collections, exception handling, and basic concurrency.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Java 8 in Action. Lambdas, Streams, and functional-style programming [Raoul-Gabriel Urma, Mario Fusco, Alan Mycroft]"
+            },
+            {
+              "text": "Effective Java [Joshua Bloch]"
+            },
+            {
+              "text": "Java: The Complete Reference [Herbert Schildt]"
+            },
+            {
+              "text": "OCP Oracle Certified Professional Java SE 17 Developer Study Guide [Jeanne Boyarsky, Scott Selikoff]"
+            },
+            {
+              "text": "The Well-Grounded Java Developer, Second Edition [Benjamin Evans, Martijn Verburg, Jason Clark]"
+            }
+          ]
+        },
+        {
+          "title": "JVM, JDK, JRE Differences",
+          "description": "Understand the components of the Java ecosystem and their roles.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Java 8 in Action. Lambdas, Streams, and functional-style programming [Raoul-Gabriel Urma, Mario Fusco, Alan Mycroft]"
+            },
+            {
+              "text": "Effective Java [Joshua Bloch]"
+            },
+            {
+              "text": "Java: The Complete Reference [Herbert Schildt]"
+            },
+            {
+              "text": "OCP Oracle Certified Professional Java SE 17 Developer Study Guide [Jeanne Boyarsky, Scott Selikoff]"
+            },
+            {
+              "text": "The Well-Grounded Java Developer, Second Edition [Benjamin Evans, Martijn Verburg, Jason Clark]"
+            }
+          ]
+        },
+        {
+          "title": "Maven",
+          "description": "Use Maven for dependency management and build automation.",
+          "tags": [
+            "Core"
+          ],
+          "resources": []
+        },
+        {
+          "title": "Git Basics",
+          "description": "Understand Git version control, basic commands, and branching.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Git Cheatsheet \u2013 GitHub"
+            },
+            {
+              "text": "The Phoenix Project: A Novel About IT, DevOps, and Helping Your Business Win [Gene Kim, George Spafford, Kevin Behr]"
+            }
+          ]
+        },
+        {
+          "title": "JUnit & Mockito",
+          "description": "Write unit tests and use mocks to isolate behavior.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "JUnit in Action (2nd Edition) [Petar Tahchiev]"
+            }
+          ]
+        },
+        {
+          "title": "Clean Code",
+          "description": "Learn the principles of writing readable, maintainable code.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Code Simplicity [Max Kanat-Alexander]"
+            },
+            {
+              "text": "A Philosophy of Software Design, 2nd Edition [Michael T. Nygard]"
+            },
+            {
+              "text": "The Passionate Programmer [Chad Fowler]"
+            },
+            {
+              "text": "Soft Skills: The Software Developer\u2019s Life Manual [John Sonmez]"
+            },
+            {
+              "text": "Celeste Headlee: 10 ways to have a better conversation | TED"
+            },
+            {
+              "text": "The Software Craftsman [Sandro Mancuso]"
+            },
+            {
+              "text": "The Clean Coder [Robert C. Martin]"
+            }
+          ]
+        },
+        {
+          "title": "Agile & Scrum",
+          "description": "Understand Agile methodologies and Scrum practices.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Code Simplicity [Max Kanat-Alexander]"
+            },
+            {
+              "text": "A Philosophy of Software Design, 2nd Edition [Michael T. Nygard]"
+            },
+            {
+              "text": "The Passionate Programmer [Chad Fowler]"
+            },
+            {
+              "text": "Soft Skills: The Software Developer\u2019s Life Manual [John Sonmez]"
+            },
+            {
+              "text": "Celeste Headlee: 10 ways to have a better conversation | TED"
+            },
+            {
+              "text": "The Software Craftsman [Sandro Mancuso]"
+            },
+            {
+              "text": "The Clean Coder [Robert C. Martin]"
+            }
+          ]
+        },
+        {
+          "title": "SQL Fundamentals",
+          "description": "Learn joins, filtering, and basic SQL queries.",
+          "tags": [
+            "Core"
+          ],
+          "resources": []
+        },
+        {
+          "title": "Spring Boot Basics",
+          "description": "Build basic REST APIs with Spring Boot and controllers.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Java Persistence with Hibernate [Christian Bauer, Gavin King]"
+            },
+            {
+              "text": "Spring Boot Crash Course - Java Brains"
+            },
+            {
+              "text": "REST API Design Rulebook [Mark Masse]"
+            },
+            {
+              "text": "RESTful Web Services [Leonard Richardson, Sam Ruby]"
+            },
+            {
+              "text": "Spring Boot in Action [Craig Walls]"
+            }
+          ]
+        },
+        {
+          "title": "PostgreSQL Integration",
+          "description": "Use Spring Data JPA with PostgreSQL.",
+          "tags": [
+            "Core"
+          ],
+          "resources": []
+        }
+      ]
+    },
+    {
+      "title": "Middle",
+      "children": [
+        {
+          "title": "Java 8+ Features",
+          "description": "Use Lambdas, Functional Interfaces, Streams, and CompletableFuture.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Java 8 in Action. Lambdas, Streams, and functional-style programming [Raoul-Gabriel Urma, Mario Fusco, Alan Mycroft]"
+            },
+            {
+              "text": "Effective Java [Joshua Bloch]"
+            },
+            {
+              "text": "Java: The Complete Reference [Herbert Schildt]"
+            },
+            {
+              "text": "OCP Oracle Certified Professional Java SE 17 Developer Study Guide [Jeanne Boyarsky, Scott Selikoff]"
+            },
+            {
+              "text": "The Well-Grounded Java Developer, Second Edition [Benjamin Evans, Martijn Verburg, Jason Clark]"
+            }
+          ]
+        },
+        {
+          "title": "Spring Data JPA",
+          "description": "Use advanced queries and custom repositories.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Java Persistence with Hibernate [Christian Bauer, Gavin King]"
+            },
+            {
+              "text": "Spring Boot Crash Course - Java Brains"
+            },
+            {
+              "text": "REST API Design Rulebook [Mark Masse]"
+            },
+            {
+              "text": "RESTful Web Services [Leonard Richardson, Sam Ruby]"
+            },
+            {
+              "text": "Spring Boot in Action [Craig Walls]"
+            }
+          ]
+        },
+        {
+          "title": "RESTful API Design",
+          "description": "Design clean REST APIs using standard conventions.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Refactoring.Guru (Design Patterns)"
+            },
+            {
+              "text": "Java Persistence with Hibernate [Christian Bauer, Gavin King]"
+            },
+            {
+              "text": "Clean Architecture: A Craftsman's Guide to Software Structure and Design [Robert C. Martin]"
+            },
+            {
+              "text": "Release It! Design and Deploy Production-Ready Software [Michael T. Nygard]"
+            },
+            {
+              "text": "Spring Boot Crash Course - Java Brains"
+            },
+            {
+              "text": "Head First Design Patterns (2nd Edition) [Eric Freeman]"
+            },
+            {
+              "text": "Software Architecture Patterns [Mark Richards]"
+            },
+            {
+              "text": "Clean Code [Robert C. Martin]"
+            },
+            {
+              "text": "REST API Design Rulebook [Mark Masse]"
+            },
+            {
+              "text": "RESTful Web Services [Leonard Richardson, Sam Ruby]"
+            },
+            {
+              "text": "Spring Boot in Action [Craig Walls]"
+            },
+            {
+              "text": "Fundamentals of Software Architecture. An Engineering Approach [Mark Richards, Neal Ford]"
+            }
+          ]
+        },
+        {
+          "title": "SOLID Principles",
+          "description": "Understand and apply object-oriented design principles.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Refactoring.Guru (Design Patterns)"
+            },
+            {
+              "text": "Clean Architecture: A Craftsman's Guide to Software Structure and Design [Robert C. Martin]"
+            },
+            {
+              "text": "Release It! Design and Deploy Production-Ready Software [Michael T. Nygard]"
+            },
+            {
+              "text": "Head First Design Patterns (2nd Edition) [Eric Freeman]"
+            },
+            {
+              "text": "Software Architecture Patterns [Mark Richards]"
+            },
+            {
+              "text": "Clean Code [Robert C. Martin]"
+            },
+            {
+              "text": "Fundamentals of Software Architecture. An Engineering Approach [Mark Richards, Neal Ford]"
+            }
+          ]
+        },
+        {
+          "title": "Transactions & Locking",
+          "description": "Handle transactional logic and concurrency in persistence.",
+          "tags": [
+            "Core"
+          ],
+          "resources": []
+        },
+        {
+          "title": "Secure API Design",
+          "description": "Apply input validation, proper HTTP status codes, and security checks.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Refactoring.Guru (Design Patterns)"
+            },
+            {
+              "text": "Java Persistence with Hibernate [Christian Bauer, Gavin King]"
+            },
+            {
+              "text": "Clean Architecture: A Craftsman's Guide to Software Structure and Design [Robert C. Martin]"
+            },
+            {
+              "text": "Release It! Design and Deploy Production-Ready Software [Michael T. Nygard]"
+            },
+            {
+              "text": "Spring Boot Crash Course - Java Brains"
+            },
+            {
+              "text": "Head First Design Patterns (2nd Edition) [Eric Freeman]"
+            },
+            {
+              "text": "Software Architecture Patterns [Mark Richards]"
+            },
+            {
+              "text": "Clean Code [Robert C. Martin]"
+            },
+            {
+              "text": "REST API Design Rulebook [Mark Masse]"
+            },
+            {
+              "text": "RESTful Web Services [Leonard Richardson, Sam Ruby]"
+            },
+            {
+              "text": "Spring Boot in Action [Craig Walls]"
+            },
+            {
+              "text": "Fundamentals of Software Architecture. An Engineering Approach [Mark Richards, Neal Ford]"
+            }
+          ]
+        },
+        {
+          "title": "Docker Basics",
+          "description": "Containerize Java applications using Docker.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Git Cheatsheet \u2013 GitHub"
+            },
+            {
+              "text": "The Phoenix Project: A Novel About IT, DevOps, and Helping Your Business Win [Gene Kim, George Spafford, Kevin Behr]"
+            }
+          ]
+        },
+        {
+          "title": "Basic Design Patterns",
+          "description": "Learn patterns like Singleton, Factory, Strategy.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Refactoring.Guru (Design Patterns)"
+            },
+            {
+              "text": "Clean Architecture: A Craftsman's Guide to Software Structure and Design [Robert C. Martin]"
+            },
+            {
+              "text": "Release It! Design and Deploy Production-Ready Software [Michael T. Nygard]"
+            },
+            {
+              "text": "Head First Design Patterns (2nd Edition) [Eric Freeman]"
+            },
+            {
+              "text": "Software Architecture Patterns [Mark Richards]"
+            },
+            {
+              "text": "Clean Code [Robert C. Martin]"
+            },
+            {
+              "text": "Fundamentals of Software Architecture. An Engineering Approach [Mark Richards, Neal Ford]"
+            }
+          ]
+        },
+        {
+          "title": "TDD (Test Driven Development)",
+          "description": "Write code guided by tests for reliability.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "JUnit in Action (2nd Edition) [Petar Tahchiev]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Middle+",
+      "children": [
+        {
+          "title": "Java 11+ Features",
+          "description": "Understand Records, Virtual Threads, Sealed Classes.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Java 8 in Action. Lambdas, Streams, and functional-style programming [Raoul-Gabriel Urma, Mario Fusco, Alan Mycroft]"
+            },
+            {
+              "text": "Effective Java [Joshua Bloch]"
+            },
+            {
+              "text": "Java: The Complete Reference [Herbert Schildt]"
+            },
+            {
+              "text": "OCP Oracle Certified Professional Java SE 17 Developer Study Guide [Jeanne Boyarsky, Scott Selikoff]"
+            },
+            {
+              "text": "The Well-Grounded Java Developer, Second Edition [Benjamin Evans, Martijn Verburg, Jason Clark]"
+            }
+          ]
+        },
+        {
+          "title": "Spring Security (JWT)",
+          "description": "Implement secure authentication using JWT.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Java Persistence with Hibernate [Christian Bauer, Gavin King]"
+            },
+            {
+              "text": "Spring Boot Crash Course - Java Brains"
+            },
+            {
+              "text": "REST API Design Rulebook [Mark Masse]"
+            },
+            {
+              "text": "RESTful Web Services [Leonard Richardson, Sam Ruby]"
+            },
+            {
+              "text": "Spring Boot in Action [Craig Walls]"
+            }
+          ]
+        },
+        {
+          "title": "Advanced Spring Boot",
+          "description": "Use AOP, security, metrics and Spring Cloud features.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Java Persistence with Hibernate [Christian Bauer, Gavin King]"
+            },
+            {
+              "text": "Spring Boot Crash Course - Java Brains"
+            },
+            {
+              "text": "REST API Design Rulebook [Mark Masse]"
+            },
+            {
+              "text": "RESTful Web Services [Leonard Richardson, Sam Ruby]"
+            },
+            {
+              "text": "Spring Boot in Action [Craig Walls]"
+            }
+          ]
+        },
+        {
+          "title": "Advanced Design Patterns",
+          "description": "Use Observer, Builder, and Chain of Responsibility.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Refactoring.Guru (Design Patterns)"
+            },
+            {
+              "text": "Clean Architecture: A Craftsman's Guide to Software Structure and Design [Robert C. Martin]"
+            },
+            {
+              "text": "Release It! Design and Deploy Production-Ready Software [Michael T. Nygard]"
+            },
+            {
+              "text": "Head First Design Patterns (2nd Edition) [Eric Freeman]"
+            },
+            {
+              "text": "Software Architecture Patterns [Mark Richards]"
+            },
+            {
+              "text": "Clean Code [Robert C. Martin]"
+            },
+            {
+              "text": "Fundamentals of Software Architecture. An Engineering Approach [Mark Richards, Neal Ford]"
+            }
+          ]
+        },
+        {
+          "title": "Microservices vs Monolith",
+          "description": "Architect applications using appropriate service granularity.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Refactoring.Guru (Design Patterns)"
+            },
+            {
+              "text": "Clean Architecture: A Craftsman's Guide to Software Structure and Design [Robert C. Martin]"
+            },
+            {
+              "text": "Release It! Design and Deploy Production-Ready Software [Michael T. Nygard]"
+            },
+            {
+              "text": "Head First Design Patterns (2nd Edition) [Eric Freeman]"
+            },
+            {
+              "text": "Software Architecture Patterns [Mark Richards]"
+            },
+            {
+              "text": "Clean Code [Robert C. Martin]"
+            },
+            {
+              "text": "Fundamentals of Software Architecture. An Engineering Approach [Mark Richards, Neal Ford]"
+            }
+          ]
+        },
+        {
+          "title": "Event-Driven Architecture",
+          "description": "Use Kafka, RabbitMQ and asynchronous design.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Refactoring.Guru (Design Patterns)"
+            },
+            {
+              "text": "Clean Architecture: A Craftsman's Guide to Software Structure and Design [Robert C. Martin]"
+            },
+            {
+              "text": "Release It! Design and Deploy Production-Ready Software [Michael T. Nygard]"
+            },
+            {
+              "text": "Head First Design Patterns (2nd Edition) [Eric Freeman]"
+            },
+            {
+              "text": "Software Architecture Patterns [Mark Richards]"
+            },
+            {
+              "text": "Clean Code [Robert C. Martin]"
+            },
+            {
+              "text": "Fundamentals of Software Architecture. An Engineering Approach [Mark Richards, Neal Ford]"
+            }
+          ]
+        },
+        {
+          "title": "Profiling Tools",
+          "description": "Profile Java apps using VisualVM, JProfiler.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Java Performance: The Definitive Guide [Scott Oaks]"
+            }
+          ]
+        },
+        {
+          "title": "JVM Internals",
+          "description": "Understand class loading, bytecode, GC and tuning.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Java 8 in Action. Lambdas, Streams, and functional-style programming [Raoul-Gabriel Urma, Mario Fusco, Alan Mycroft]"
+            },
+            {
+              "text": "Effective Java [Joshua Bloch]"
+            },
+            {
+              "text": "Java: The Complete Reference [Herbert Schildt]"
+            },
+            {
+              "text": "OCP Oracle Certified Professional Java SE 17 Developer Study Guide [Jeanne Boyarsky, Scott Selikoff]"
+            },
+            {
+              "text": "The Well-Grounded Java Developer, Second Edition [Benjamin Evans, Martijn Verburg, Jason Clark]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Senior",
+      "children": [
+        {
+          "title": "Performance Benchmarking",
+          "description": "Use metrics and tools to measure and tune performance.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Java Performance: The Definitive Guide [Scott Oaks]"
+            }
+          ]
+        },
+        {
+          "title": "Concurrency Tuning",
+          "description": "Optimize multithreading and resource sharing.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Java Performance: The Definitive Guide [Scott Oaks]"
+            }
+          ]
+        },
+        {
+          "title": "Distributed Systems",
+          "description": "Understand CAP theorem, Saga, Outbox patterns.",
+          "tags": [
+            "Core"
+          ],
+          "resources": []
+        },
+        {
+          "title": "Team Mentoring",
+          "description": "Support and guide junior developers.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Code Simplicity [Max Kanat-Alexander]"
+            },
+            {
+              "text": "A Philosophy of Software Design, 2nd Edition [Michael T. Nygard]"
+            },
+            {
+              "text": "The Passionate Programmer [Chad Fowler]"
+            },
+            {
+              "text": "Soft Skills: The Software Developer\u2019s Life Manual [John Sonmez]"
+            },
+            {
+              "text": "Celeste Headlee: 10 ways to have a better conversation | TED"
+            },
+            {
+              "text": "The Software Craftsman [Sandro Mancuso]"
+            },
+            {
+              "text": "The Clean Coder [Robert C. Martin]"
+            }
+          ]
+        },
+        {
+          "title": "Code Review Mastery",
+          "description": "Lead efficient and constructive code reviews.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Code Simplicity [Max Kanat-Alexander]"
+            },
+            {
+              "text": "A Philosophy of Software Design, 2nd Edition [Michael T. Nygard]"
+            },
+            {
+              "text": "The Passionate Programmer [Chad Fowler]"
+            },
+            {
+              "text": "Soft Skills: The Software Developer\u2019s Life Manual [John Sonmez]"
+            },
+            {
+              "text": "Celeste Headlee: 10 ways to have a better conversation | TED"
+            },
+            {
+              "text": "The Software Craftsman [Sandro Mancuso]"
+            },
+            {
+              "text": "The Clean Coder [Robert C. Martin]",
+              "url":  "https://www.amazon.com/Clean-Coder-Conduct-Professional-Programmers/dp/0136083239"
+            }
+          ]
+        },
+        {
+          "title": "Technical Leadership",
+          "description": "Drive architectural decisions and technical direction.",
+          "tags": [
+            "Core"
+          ],
+          "resources": []
+        },
+        {
+          "title": "Project Estimation & Planning",
+          "description": "Estimate timelines and manage feature delivery.",
+          "tags": [
+            "Core"
+          ],
+          "resources": []
+        },
+        {
+          "title": "Stakeholder Communication",
+          "description": "Collaborate effectively with PMs, QA, and business.",
+          "tags": [
+            "Core"
+          ],
+          "resources": []
+        },
+        {
+          "title": "Release & Deployment Strategy",
+          "description": "Plan rollouts, manage risks and rollbacks.",
+          "tags": [
+            "Core"
+          ],
+          "resources": []
+        }
+      ]
+    }
+  ]
+}

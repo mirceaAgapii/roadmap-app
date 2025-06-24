@@ -1,0 +1,451 @@
+{
+  "generalTitle": "PLC Engineering",
+  "roadmap": [
+    {
+      "title": "Trainee",
+      "children": [
+        {
+          "title": "Introduction to PLCs",
+          "description": "Learn what a PLC is, where it's used, and its basic structure.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Intro to PLCs - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "Intro to PLCs - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            }
+          ]
+        },
+        {
+          "title": "Basic Electrical Concepts",
+          "description": "Understand voltage, current, resistance, and power.",
+          "tags": [
+            "Advanced"
+          ],
+          "resources": [
+            {
+              "text": "Electrical Concepts - Baeldung",
+              "url": "https://www.baeldung.com/"
+            }
+          ]
+        },
+        {
+          "title": "Reading Electrical Schematics",
+          "description": "Learn how to interpret circuit diagrams and wiring layouts.",
+          "tags": [
+            "Advanced"
+          ],
+          "resources": [
+            {
+              "text": "Schematics Reading - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "Schematics Reading - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            },
+            {
+              "text": "Schematics Reading - Oracle Docs",
+              "url": "https://docs.oracle.com/"
+            }
+          ]
+        },
+        {
+          "title": "Wiring Sensors & Actuators",
+          "description": "Basic hands-on knowledge of connecting field devices.",
+          "tags": [
+            "Advanced"
+          ],
+          "resources": [
+            {
+              "text": "Wiring Sensors - Baeldung",
+              "url": "https://www.baeldung.com/"
+            }
+          ]
+        },
+        {
+          "title": "Basic Safety Protocols",
+          "description": "Understand how to safely work with automation systems.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Safety Protocols - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "Safety Protocols - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Junior",
+      "children": [
+        {
+          "title": "Ladder Logic Programming",
+          "description": "Start programming with ladder logic using basic instructions.",
+          "tags": [
+            "Recommended"
+          ],
+          "resources": [
+            {
+              "text": "Ladder Logic - Baeldung",
+              "url": "https://www.baeldung.com/"
+            }
+          ]
+        },
+        {
+          "title": "HMI Basics",
+          "description": "Design simple user interfaces using HMI tools.",
+          "tags": [
+            "Advanced"
+          ],
+          "resources": [
+            {
+              "text": "HMI Basics - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "HMI Basics - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            },
+            {
+              "text": "HMI Basics - Oracle Docs",
+              "url": "https://docs.oracle.com/"
+            }
+          ]
+        },
+        {
+          "title": "Timers and Counters",
+          "description": "Implement timing and counting operations in your logic.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Timers Counters - Baeldung",
+              "url": "https://www.baeldung.com/"
+            }
+          ]
+        },
+        {
+          "title": "Introduction to TIA Portal",
+          "description": "Siemens environment for PLC programming and simulation.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "TIA Portal - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "TIA Portal - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            }
+          ]
+        },
+        {
+          "title": "PLC Hardware Setup",
+          "description": "Work with real or simulated PLC hardware modules.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "PLC Hardware - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "PLC Hardware - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Middle",
+      "children": [
+        {
+          "title": "Advanced Ladder Logic",
+          "description": "Use comparison, arithmetic and complex logic blocks.",
+          "tags": [
+            "Advanced"
+          ],
+          "resources": [
+            {
+              "text": "Advanced Ladder - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "Advanced Ladder - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            },
+            {
+              "text": "Advanced Ladder - Oracle Docs",
+              "url": "https://docs.oracle.com/"
+            }
+          ]
+        },
+        {
+          "title": "Structured Text",
+          "description": "Program PLCs using text-based languages (ST).",
+          "tags": [
+            "Recommended"
+          ],
+          "resources": [
+            {
+              "text": "Structured Text - Baeldung",
+              "url": "https://www.baeldung.com/"
+            }
+          ]
+        },
+        {
+          "title": "Analog Input/Output",
+          "description": "Read sensors and control actuators with analog signals.",
+          "tags": [
+            "Advanced"
+          ],
+          "resources": [
+            {
+              "text": "Analog I/O - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "Analog I/O - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            },
+            {
+              "text": "Analog I/O - Oracle Docs",
+              "url": "https://docs.oracle.com/"
+            }
+          ]
+        },
+        {
+          "title": "Industrial Communication Protocols",
+          "description": "Understand PROFIBUS, PROFINET, Modbus and Ethernet/IP.",
+          "tags": [
+            "Advanced"
+          ],
+          "resources": [
+            {
+              "text": "Protocols - Baeldung",
+              "url": "https://www.baeldung.com/"
+            }
+          ]
+        },
+        {
+          "title": "SCADA Integration",
+          "description": "Connect PLCs to SCADA systems for monitoring and control.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "SCADA Integration - Baeldung",
+              "url": "https://www.baeldung.com/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Middle+",
+      "children": [
+        {
+          "title": "Function Blocks & Reusability",
+          "description": "Create reusable modular logic with FBs and UDTs.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Function Blocks - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "Function Blocks - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            }
+          ]
+        },
+        {
+          "title": "PLC Simulation Tools",
+          "description": "Simulate PLC programs without real hardware.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "PLC Simulation - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "PLC Simulation - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            },
+            {
+              "text": "PLC Simulation - Oracle Docs",
+              "url": "https://docs.oracle.com/"
+            }
+          ]
+        },
+        {
+          "title": "PID Control in PLCs",
+          "description": "Use PID loops to control analog processes.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "PID Control - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "PID Control - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            },
+            {
+              "text": "PID Control - Oracle Docs",
+              "url": "https://docs.oracle.com/"
+            }
+          ]
+        },
+        {
+          "title": "Project Documentation",
+          "description": "Document code, wiring and configuration clearly.",
+          "tags": [
+            "Optional"
+          ],
+          "resources": [
+            {
+              "text": "PLC Docs - Baeldung",
+              "url": "https://www.baeldung.com/"
+            }
+          ]
+        },
+        {
+          "title": "On-Site Commissioning",
+          "description": "Perform real-world setup and testing at customer sites.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Commissioning - Baeldung",
+              "url": "https://www.baeldung.com/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Senior",
+      "children": [
+        {
+          "title": "System Architecture Design",
+          "description": "Design scalable, redundant automation systems.",
+          "tags": [
+            "Advanced"
+          ],
+          "resources": [
+            {
+              "text": "PLC Architecture - Baeldung",
+              "url": "https://www.baeldung.com/"
+            }
+          ]
+        },
+        {
+          "title": "Safety PLCs and SIL Standards",
+          "description": "Work with safety-rated PLCs and understand IEC 61508/62061.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Safety PLC - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "Safety PLC - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            },
+            {
+              "text": "Safety PLC - Oracle Docs",
+              "url": "https://docs.oracle.com/"
+            }
+          ]
+        },
+        {
+          "title": "Project Estimation and Planning",
+          "description": "Estimate resources, time, and budget for automation projects.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Project Estimation - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "Project Estimation - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            },
+            {
+              "text": "Project Estimation - Oracle Docs",
+              "url": "https://docs.oracle.com/"
+            }
+          ]
+        },
+        {
+          "title": "Mentoring Junior Engineers",
+          "description": "Guide and support team members on-site and remotely.",
+          "tags": [
+            "Advanced"
+          ],
+          "resources": [
+            {
+              "text": "Mentoring PLC - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "Mentoring PLC - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            }
+          ]
+        },
+        {
+          "title": "Advanced Troubleshooting",
+          "description": "Diagnose complex issues in live production environments.",
+          "tags": [
+            "Advanced"
+          ],
+          "resources": [
+            {
+              "text": "PLC Troubleshooting - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "PLC Troubleshooting - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            },
+            {
+              "text": "PLC Troubleshooting - Oracle Docs",
+              "url": "https://docs.oracle.com/"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

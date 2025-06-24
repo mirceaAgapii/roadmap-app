@@ -1,0 +1,467 @@
+{
+  "generalTitle": "Frontend",
+  "roadmap": [
+    {
+      "title": "Trainee",
+      "children": [
+        {
+          "title": "HTML Basics",
+          "description": "Learn semantic HTML tags and document structure.",
+          "tags": [
+            "Recommended"
+          ],
+          "resources": [
+            {
+              "text": "HTML Basics - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "HTML Basics - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            },
+            {
+              "text": "HTML Basics - Oracle Docs",
+              "url": "https://docs.oracle.com/"
+            }
+          ]
+        },
+        {
+          "title": "CSS Fundamentals",
+          "description": "Understand box model, positioning, and basic selectors.",
+          "tags": [
+            "Recommended"
+          ],
+          "resources": [
+            {
+              "text": "CSS Fundamentals - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "CSS Fundamentals - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            },
+            {
+              "text": "CSS Fundamentals - Oracle Docs",
+              "url": "https://docs.oracle.com/"
+            }
+          ]
+        },
+        {
+          "title": "JavaScript Basics",
+          "description": "Learn about variables, functions, arrays, and loops in JS.",
+          "tags": [
+            "Optional"
+          ],
+          "resources": [
+            {
+              "text": "JavaScript Basics - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "JavaScript Basics - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            },
+            {
+              "text": "JavaScript Basics - Oracle Docs",
+              "url": "https://docs.oracle.com/"
+            }
+          ]
+        },
+        {
+          "title": "DOM Manipulation",
+          "description": "Access and modify HTML elements with JavaScript.",
+          "tags": [
+            "Advanced"
+          ],
+          "resources": [
+            {
+              "text": "DOM Manipulation - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "DOM Manipulation - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            },
+            {
+              "text": "DOM Manipulation - Oracle Docs",
+              "url": "https://docs.oracle.com/"
+            }
+          ]
+        },
+        {
+          "title": "Using VS Code",
+          "description": "Setup your frontend dev environment with VS Code.",
+          "tags": [
+            "Advanced"
+          ],
+          "resources": [
+            {
+              "text": "VS Code - Baeldung",
+              "url": "https://www.baeldung.com/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Junior",
+      "children": [
+        {
+          "title": "Git and GitHub",
+          "description": "Version control basics and collaboration using GitHub.",
+          "tags": [
+            "Recommended"
+          ],
+          "resources": [
+            {
+              "text": "Git and GitHub - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "Git and GitHub - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            }
+          ]
+        },
+        {
+          "title": "Responsive Design",
+          "description": "Use media queries and flexible layouts for mobile-first design.",
+          "tags": [
+            "Advanced"
+          ],
+          "resources": [
+            {
+              "text": "Responsive Design - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "Responsive Design - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            }
+          ]
+        },
+        {
+          "title": "JavaScript ES6+",
+          "description": "Master let/const, arrow functions, destructuring and more.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "JavaScript ES6 - Baeldung",
+              "url": "https://www.baeldung.com/"
+            }
+          ]
+        },
+        {
+          "title": "Intro to React",
+          "description": "Learn components, props, state and JSX in React.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Intro to React - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "Intro to React - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            },
+            {
+              "text": "Intro to React - Oracle Docs",
+              "url": "https://docs.oracle.com/"
+            }
+          ]
+        },
+        {
+          "title": "Basic Webpack",
+          "description": "Bundle your frontend assets using Webpack basics.",
+          "tags": [
+            "Recommended"
+          ],
+          "resources": [
+            {
+              "text": "Basic Webpack - Baeldung",
+              "url": "https://www.baeldung.com/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Middle",
+      "children": [
+        {
+          "title": "Advanced CSS (Flexbox/Grid)",
+          "description": "Layout techniques using Flexbox and CSS Grid.",
+          "tags": [
+            "Advanced"
+          ],
+          "resources": [
+            {
+              "text": "Advanced CSS - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "Advanced CSS - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            }
+          ]
+        },
+        {
+          "title": "React Hooks",
+          "description": "UseEffect, useState, custom hooks and lifecycle simulation.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "React Hooks - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "React Hooks - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            },
+            {
+              "text": "React Hooks - Oracle Docs",
+              "url": "https://docs.oracle.com/"
+            }
+          ]
+        },
+        {
+          "title": "Routing with React Router",
+          "description": "Client-side routing and dynamic pages in React.",
+          "tags": [
+            "Advanced"
+          ],
+          "resources": [
+            {
+              "text": "React Router - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "React Router - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            }
+          ]
+        },
+        {
+          "title": "Form Validation",
+          "description": "Validate user input using controlled components.",
+          "tags": [
+            "Advanced"
+          ],
+          "resources": [
+            {
+              "text": "Form Validation - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "Form Validation - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            },
+            {
+              "text": "Form Validation - Oracle Docs",
+              "url": "https://docs.oracle.com/"
+            }
+          ]
+        },
+        {
+          "title": "State Management",
+          "description": "Manage app state with Context API or Redux.",
+          "tags": [
+            "Advanced"
+          ],
+          "resources": [
+            {
+              "text": "State Management - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "State Management - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            },
+            {
+              "text": "State Management - Oracle Docs",
+              "url": "https://docs.oracle.com/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Middle+",
+      "children": [
+        {
+          "title": "Testing with Jest",
+          "description": "Write unit tests for components and logic using Jest.",
+          "tags": [
+            "Recommended"
+          ],
+          "resources": [
+            {
+              "text": "Testing with Jest - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "Testing with Jest - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            }
+          ]
+        },
+        {
+          "title": "Performance Optimization",
+          "description": "Lazy loading, code splitting, and avoiding re-renders.",
+          "tags": [
+            "Recommended"
+          ],
+          "resources": [
+            {
+              "text": "Frontend Performance - Baeldung",
+              "url": "https://www.baeldung.com/"
+            }
+          ]
+        },
+        {
+          "title": "Styled Components",
+          "description": "Use CSS-in-JS to style components dynamically.",
+          "tags": [
+            "Recommended"
+          ],
+          "resources": [
+            {
+              "text": "Styled Components - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "Styled Components - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            },
+            {
+              "text": "Styled Components - Oracle Docs",
+              "url": "https://docs.oracle.com/"
+            }
+          ]
+        },
+        {
+          "title": "API Integration",
+          "description": "Fetch and use data from external APIs with Axios or Fetch.",
+          "tags": [
+            "Advanced"
+          ],
+          "resources": [
+            {
+              "text": "API Integration - Baeldung",
+              "url": "https://www.baeldung.com/"
+            }
+          ]
+        },
+        {
+          "title": "Accessibility (a11y)",
+          "description": "Make web apps accessible for all users.",
+          "tags": [
+            "Optional"
+          ],
+          "resources": [
+            {
+              "text": "Accessibility - Baeldung",
+              "url": "https://www.baeldung.com/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Senior",
+      "children": [
+        {
+          "title": "Design Systems",
+          "description": "Build and maintain consistent UI libraries and components.",
+          "tags": [
+            "Optional"
+          ],
+          "resources": [
+            {
+              "text": "Design Systems - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "Design Systems - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            }
+          ]
+        },
+        {
+          "title": "Advanced Web Security",
+          "description": "Prevent XSS, CSRF, and handle CORS correctly.",
+          "tags": [
+            "Advanced"
+          ],
+          "resources": [
+            {
+              "text": "Web Security - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "Web Security - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            },
+            {
+              "text": "Web Security - Oracle Docs",
+              "url": "https://docs.oracle.com/"
+            }
+          ]
+        },
+        {
+          "title": "CI/CD for Frontend",
+          "description": "Automate testing and deployment with GitHub Actions or GitLab CI.",
+          "tags": [
+            "Recommended"
+          ],
+          "resources": [
+            {
+              "text": "CI/CD Frontend - Baeldung",
+              "url": "https://www.baeldung.com/"
+            },
+            {
+              "text": "CI/CD Frontend - GeeksforGeeks",
+              "url": "https://www.geeksforgeeks.org/"
+            },
+            {
+              "text": "CI/CD Frontend - Oracle Docs",
+              "url": "https://docs.oracle.com/"
+            }
+          ]
+        },
+        {
+          "title": "Progressive Web Apps (PWA)",
+          "description": "Build installable and offline-capable web apps.",
+          "tags": [
+            "Optional"
+          ],
+          "resources": [
+            {
+              "text": "PWA - Baeldung",
+              "url": "https://www.baeldung.com/"
+            }
+          ]
+        },
+        {
+          "title": "Frontend Architecture",
+          "description": "Design scalable codebases using modular and layered approaches.",
+          "tags": [
+            "Core"
+          ],
+          "resources": [
+            {
+              "text": "Frontend Architecture - Baeldung",
+              "url": "https://www.baeldung.com/"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
