@@ -47,7 +47,8 @@
           <h3>Resources</h3>
           <ul>
             <li v-for="(res, i) in selectedItem.resources" :key="i">
-              <a :href="res.url" target="_blank">{{ res.text }}</a>
+                <span v-if="!res.url">{{ res.text }}</span>
+                <a v-if="res.url" :href="res.url" target="_blank">{{ res.text }}</a>
             </li>
           </ul>
         </div>
@@ -304,6 +305,12 @@ export default {
 .details-drawer li {
   position: relative;
   font-size: 18px;
+}
+
+.details-drawer li a {
+  color: #9191ee;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .slide-up-enter-active,
