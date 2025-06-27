@@ -123,49 +123,78 @@ export default {
 </script>
 
 <style scoped>
+/* Stiluri Generale & Reset de bază */
+/* Acestea ar trebui să rămână în App.vue conform discuției anterioare */
+/* html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; } */
+
 .modern-roadmap {
   display: grid;
-  grid-template-columns: 250px 1fr;
-  grid-template-rows: 1fr auto;
-  /* conținut + footer */
+  grid-template-columns: 250px 1fr; /* Sidebar fix, conținut principal flexibil */
+  /* NOUL grid-template-rows: Acum definim 3 rânduri explicite. */
+  /* Rândul 1: Header (dacă ar fi în această componentă, dar nu e) */
+  /* Rândul 2: Conținutul principal și sidebar-ul. Flexibil. */
+  /* Rândul 3: Sertarul de detalii. Cu înălțime automată. */
+  grid-template-rows: 1fr auto; /* Rândul de sus flexibil, rândul de jos automat */
+  /* NOUL grid-template-areas: */
   grid-template-areas:
     "sidebar main"
-    "sidebar footer";
-  height: auto;
+    "sidebar details-drawer"; /* Am redenumit "footer" în "details-drawer" pentru claritate */
+
+  /* Acestea au fost ajustate în App.vue, dar dacă vrei o margine vizibilă în jurul lor, */
+  /* .modern-roadmap ar trebui să aibă niște padding, iar părintele său în App.vue */
+  /* nu ar trebui să o forțeze să ocupe 100% din lățime/înălțime fără padding. */
+  /* Lasăm așa cum e, presupunând că .main-content-wrapper din App.vue gestionează padding-ul exterior */
+  /* sau că .modern-roadmap primește padding de la un părinte. */
+
+  /* Eliminăm min-height: 100vh; de aici, este gestionat de App.vue acum */
+  /* height: auto; */ /* Îl lăsăm să se adapteze la înălțimea dată de părinte */
   font-family: 'Segoe UI', Roboto, sans-serif;
-  background: var(--primary-text);
-  gap: 20px;
-  padding: 20px;
+  background: transparent; /* Setăm fundalul transparent pentru a vedea fundalul App.vue */
+  gap: 20px; /* Spațiere între elementele grilei */
+  padding: 0; /* Padding-ul exterior ar trebui gestionat de .main-content-wrapper din App.vue */
   box-sizing: border-box;
+  /* Nou: asigură că .modern-roadmap ocupă tot spațiul disponibil de la părintele său */
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Important pentru a gestiona scroll-ul intern */
 }
 
+/* Sidebar */
 .sidebar {
-  grid-area: sidebar;
-  width: 250px;
+  grid-area: sidebar; /* Se întinde pe toată înălțimea grilei */
+  /* Lățimea este definită în grid-template-columns */
   background: var(--primary-background);
   padding: 24px;
-  border-radius: 16px;
+  border-radius: 16px; /* Colțuri rotunjite */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.04);
-  height: 100%;
   box-sizing: border-box;
+  overflow-y: auto; /* Permite scroll vertical */
+  /* Eliminăm max-height-ul fix de aici; se va adapta la grid */
+  /* Adaugăm o înălțime minimă pentru a arăta bine, dar flexibil */
+  min-height: 0; /* Permite elementului flex să se micșoreze */
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar h2 {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
   color: #fdfaff;
+  flex-shrink: 0; /* Împiedică titlul să se micșoreze */
 }
 
 .sidebar ul {
   padding: 0;
   list-style: none;
+  flex-grow: 1; /* Permite listei să ocupe spațiul rămas și să aibă scroll */
+  overflow-y: auto; /* Scroll intern pentru listă */
 }
 
 .sidebar li {
   background: var(--primary-background);
-  padding: 10px 14px;
-  margin-bottom: 8px;
+  padding: 0.625rem 0.875rem;
+  margin-bottom: 0.5rem;
   border-radius: 10px;
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s;
@@ -187,31 +216,37 @@ export default {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Main Content */
 .content {
-  grid-area: main;
+  grid-area: main; /* Ocupă doar rândul "main" */
   display: flex;
   flex-direction: column;
   border-radius: 16px;
   background-color: var(--main-content-bg);
-  padding: 35px;
+  box-sizing: border-box;
+  overflow-y: auto; /* Scroll vertical pentru conținutul principal */
+  min-height: 0; /* Permite micșorarea */
+  position: relative; /* Pentru a poziționa elemente absolut dacă e cazul */
 }
 
 .roadmap-title {
-  font-size: 26px;
+  font-size: 1.625rem;
   font-weight: 700;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
   text-align: left;
+  flex-shrink: 0; /* Previne micșorarea titlului */
 }
 
 .level-tabs {
   display: flex;
-  gap: 12px;
-  margin-bottom: 32px;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
   flex-wrap: wrap;
+  flex-shrink: 0; /* Previne micșorarea butoanelor */
 }
 
 .level-tabs button {
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   border: none;
   border-radius: 999px;
   background: var(--not-active-bg);
@@ -219,6 +254,7 @@ export default {
   color: var(--primary-text);
   cursor: pointer;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .level-tabs button:hover {
@@ -236,16 +272,22 @@ export default {
 .topics-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 20px;
+  gap: 1.25rem;
+  flex-grow: 1; /* Permite grid-ului să ocupe spațiul rămas în .content */
+  /* Overflow este gestionat de .content */
 }
 
 .topic-card {
   background: var(--topic-card-bg);
   border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  padding: 20px;
+  padding: 1.25rem;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
+  max-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .topic-card:hover {
@@ -255,63 +297,80 @@ export default {
 
 .topic-title {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 1rem;
   text-align: left;
-  margin-bottom: 12px;
+  margin-bottom: 0.75rem;
 }
 
 .tags {
   display: flex;
   justify-content: left;
-  gap: 6px;
+  gap: 0.375rem;
   flex-wrap: wrap;
+  margin-top: auto;
 }
 
 .tag {
-  font-size: 12px;
-  padding: 4px 10px;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.625rem;
   border-radius: 999px;
   background: var(--plain-text);
   color: var(--primary-text);
   font-weight: 500;
 }
 
+/* Details Drawer (sertarul de jos) */
 .details-drawer {
-  grid-area: footer;
+  grid-area: details-drawer; /* Acum are propria sa zonă în grid */
   background: var(--drawer-bg);
-  border-radius: 16px;
-  padding: 0 24px;
+  border-radius: 16px; /* Colțuri rotunjite */
+  padding: 24px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
-  height: 450px;
+  overflow-y: auto; /* Foarte important pentru scroll intern */
+
+  /* NOUL MOD DE A LIMTA ÎNĂLȚIMEA */
+  height: auto; /* Permitem să se adapteze */
+  max-height: 35vh; /* Ocupă maxim 35% din înălțimea viewport-ului */
+  /* Puteți ajusta '35vh' în funcție de cât de mult doriți să vadă din topic-uri */
+
   text-align: left;
   color: var(--primary-text);
+  /* Adaugăm un margin-bottom la nivelul containerului părinte (.modern-roadmap) */
+  /* sau îl facem pe el să aibă o margine de jos. */
+  /* Pentru a avea margini în jurul lui, .modern-roadmap ar trebui să aibă padding. */
+  /* Dacă .modern-roadmap este flex-grow: 1 în .main-content-wrapper, atunci */
+  /* .main-content-wrapper ar trebui să aibă padding. */
 }
 
 .details-drawer h2 {
-  font-size: 30px;
+  font-size: 1.875rem;
   font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 }
 
 .details-drawer p {
-  font-size: 20px;
+  font-size: 1.25rem;
   color: var(--primary-text);
+  margin-bottom: 1rem;
 }
 
 .details-drawer h3 {
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .details-drawer ul {
   list-style-type: disc;
-  padding-left: 20px;
+  padding-left: 1.25rem;
 }
 
 .details-drawer li {
   position: relative;
-  font-size: 18px;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
 }
 
 .details-drawer li a {
@@ -328,15 +387,17 @@ export default {
 .resource-list li {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .icon {
-  width: 24px;
+  width: 1.5rem;
   text-align: center;
+  flex-shrink: 0;
 }
 
+/* Stiluri pentru animația slide-up (dacă este folosită cu Vue transition) */
 .slide-up-enter-active,
 .slide-up-leave-active {
   transition: transform 0.3s ease;
@@ -345,5 +406,181 @@ export default {
 .slide-up-enter-from,
 .slide-up-leave-to {
   transform: translateY(100%);
+}
+
+
+/* --- Media Queries pentru Responsivitate --- */
+
+/* Pentru ecrane mai mici (de exemplu, tablete în modul portret și telefoane mari) */
+@media (max-width: 992px) {
+  .modern-roadmap {
+    grid-template-columns: 1fr; /* Sidebar-ul și conținutul se aranjează pe o singură coloană */
+    grid-template-rows: auto 1fr auto; /* Sidebar sus (auto), conținut flexibil, drawer auto */
+    grid-template-areas:
+      "sidebar"
+      "main"
+      "details-drawer"; /* Ajustăm grid-areas pentru mobil */
+    gap: 15px;
+    padding: 0; /* Padding-ul exterior gestionat de App.vue */
+  }
+
+  .sidebar {
+    width: auto;
+    max-height: 200px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 15px;
+    /* Adăugăm o margine de jos și sus pentru a-l separa de elementele învecinate */
+    margin: 0 0 15px 0; /* Margine jos */
+  }
+  .sidebar ul {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+  .sidebar li {
+    flex-shrink: 0;
+    padding: 8px 12px;
+    border-bottom: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+  }
+  .sidebar li:last-child {
+    border-bottom: none;
+  }
+
+  .content {
+    padding: 20px;
+    min-height: 250px; /* Adăugăm o înălțime minimă pe mobil pentru a asigura vizibilitatea topic-urilor */
+  }
+
+  .roadmap-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .level-tabs {
+    gap: 10px;
+    margin-bottom: 1.5rem;
+  }
+
+  .level-tabs button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .topics-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .topic-card {
+    padding: 15px;
+  }
+
+  .topic-title {
+    font-size: 0.95rem;
+  }
+
+  .details-drawer {
+    max-height: 40vh; /* Ajustăm și mai mult pentru a fi mai mic pe mobil */
+    padding: 20px;
+    /* Adăugăm o margine de sus și jos pentru a-l separa de elementele învecinate */
+    margin-top: 15px; /* Margine sus */
+    margin-bottom: 0; /* Lăsăm marginea de jos să vină de la padding-ul main-content-wrapper */
+  }
+  .details-drawer h2 {
+    font-size: 1.5rem;
+  }
+  .details-drawer p {
+    font-size: 1rem;
+  }
+  .details-drawer h3 {
+    font-size: 1.15rem;
+  }
+  .details-drawer li {
+    font-size: 1rem;
+  }
+}
+
+/* Pentru ecrane foarte mici (telefoane) */
+@media (max-width: 576px) {
+  .modern-roadmap {
+    padding: 0; /* Padding-ul exterior gestionat de App.vue */
+    gap: 10px;
+  }
+
+  .sidebar {
+    padding: 10px;
+    max-height: 150px;
+    margin: 0 0 10px 0;
+  }
+  .sidebar h2 {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+  .sidebar ul {
+    gap: 8px;
+  }
+  .sidebar li {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+
+  .content {
+    padding: 15px;
+    min-height: 200px; /* Asigură vizibilitatea topic-urilor și mai bine */
+  }
+
+  .roadmap-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .level-tabs {
+    gap: 8px;
+    margin-bottom: 1rem;
+  }
+  .level-tabs button {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
+  .topics-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .topic-card {
+    padding: 12px;
+    min-height: 100px;
+  }
+  .topic-title {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  .tag {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+
+  .details-drawer {
+    max-height: 50vh; /* Ajustăm pentru a lăsa spațiu pentru topic-uri */
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+  .details-drawer h2 {
+    font-size: 1.3rem;
+  }
+  .details-drawer p {
+    font-size: 0.9rem;
+  }
+  .details-drawer h3 {
+    font-size: 1rem;
+  }
+  .details-drawer li {
+    font-size: 0.9rem;
+  }
 }
 </style>
