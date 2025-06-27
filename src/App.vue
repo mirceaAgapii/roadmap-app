@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="mode-toggle">
+    <div class="mode-toggle" v-if="showHeader">
       <button
         @click="mode = 'modern'"
         :class="{ active: mode === 'modern' }"
@@ -16,7 +16,11 @@
     </div>
 
     <div class="main-content-wrapper">
-      <RoadmapModern v-if="mode === 'modern'" />
+      <RoadmapModern
+        v-if="mode === 'modern'"
+        :showHeader="showHeader"
+        @toggle-header="toggleHeaderVisibility"
+      />
       <RoadmapEditor v-if="mode === 'editor'" />
     </div>
   </div>
@@ -34,8 +38,26 @@ export default {
   },
   data() {
     return {
-      mode: 'modern'
+      mode: 'modern',
+      showHeader: false, // <-- NOU: Controlăm vizibilitatea header-ului aici
     };
+  },
+  methods: {
+    toggleHeaderVisibility() {
+      // Metoda apelată când componenta copil emite 'toggle-header'
+      this.showHeader = !this.showHeader;
+      console.log('Header vizibilitate comutată:', this.showHeader);
+      // Puteți adăuga aici logică pentru a salva starea în localStorage, dacă doriți să persiste
+      // localStorage.setItem('adminHeaderVisible', this.showHeader);
+    }
+  },
+  // Dacă vrei ca starea să persiste între reîncărcări, poți adăuga:
+  mounted() {
+    // La montare, verifică starea din localStorage
+    // const savedState = localStorage.getItem('adminHeaderVisible');
+    // if (savedState !== null) {
+    //   this.showHeader = JSON.parse(savedState);
+    // }
   }
 };
 </script>
@@ -108,7 +130,7 @@ html, body {
   flex-grow: 1;
   display: flex;
   overflow: hidden; /* Asigură că wrapper-ul gestionează scroll-ul intern */
-  padding: 0 20px 20px 20px; /* Adaugă padding la stânga, dreapta și JOS */
+  padding: 20px; /* Adaugă padding la stânga, dreapta și JOS */
   /* Sus este deja gestionat de margin-bottom al .mode-toggle */
 }
 
@@ -125,7 +147,7 @@ html, body {
   }
 
   .main-content-wrapper {
-    padding: 0 10px 10px 10px; /* Reduce padding-ul pe mobil */
+    padding: 10px;
   }
 }
 </style>
