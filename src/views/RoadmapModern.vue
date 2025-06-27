@@ -273,8 +273,6 @@ export default {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 1.25rem;
-  flex-grow: 1; /* Permite grid-ului să ocupe spațiul rămas în .content */
-  /* Overflow este gestionat de .content */
 }
 
 .topic-card {
@@ -414,36 +412,52 @@ export default {
 /* Pentru ecrane mai mici (de exemplu, tablete în modul portret și telefoane mari) */
 @media (max-width: 992px) {
   .modern-roadmap {
-    grid-template-columns: 1fr; /* Sidebar-ul și conținutul se aranjează pe o singură coloană */
-    grid-template-rows: auto 1fr auto; /* Sidebar sus (auto), conținut flexibil, drawer auto */
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
     grid-template-areas:
       "sidebar"
       "main"
-      "details-drawer"; /* Ajustăm grid-areas pentru mobil */
+      "details-drawer";
     gap: 15px;
-    padding: 0; /* Padding-ul exterior gestionat de App.vue */
+    padding: 0;
   }
 
   .sidebar {
     width: auto;
     max-height: 200px;
-    overflow-x: auto;
-    white-space: nowrap;
+    /* overflow-x: auto; - Mutăm acest overflow pe ul */
+    /* white-space: nowrap; - Mutăm acest nowrap pe li, sau îl eliminăm dacă vrem wrap la text în interiorul butonului */
     padding: 15px;
-    /* Adăugăm o margine de jos și sus pentru a-l separa de elementele învecinate */
-    margin: 0 0 15px 0; /* Margine jos */
-  }
-  .sidebar ul {
+    margin: 0 0 15px 0;
+    /* NOU: Facem sidebar-ul flex container pentru a aranja lista de roadmaps */
     display: flex;
+    flex-direction: column; /* Asigură că h2 și ul sunt pe coloană */
+  }
+  .sidebar h2 {
+    flex-shrink: 0; /* Previne micșorarea titlului */
+    margin-bottom: 10px; /* Asigură spațiu */
+  }
+
+  .sidebar ul {
+    display: flex; /* Face lista de roadmaps să fie un container flex */
     gap: 10px;
-    justify-content: center;
+    overflow-x: auto; /* Aici este cheia: scroll orizontal pe UL */
+    -webkit-overflow-scrolling: touch; /* Îmbunătățește scroll-ul pe iOS */
+    padding-bottom: 5px; /* Adaugă un pic de padding pentru scrollbar, dacă e vizibil */
+    margin-bottom: -5px; /* Compensează padding-ul de jos */
   }
   .sidebar li {
-    flex-shrink: 0;
-    padding: 8px 12px;
+    flex-shrink: 0; /* Important: Fiecare element li nu se va micșora */
+    /* NOU: Lățime fixă sau minimă pentru butoane pentru a garanta că nu se taie textul */
+    min-width: 80px; /* Ajustează această valoare după nevoi */
+    /* Dacă vrei ca textul să se încadreze și să nu fie tăiat, poți folosi: */
+    /* white-space: normal; */
+    /* text-overflow: ellipsis; /* Dar asta necesită overflow: hidden și white-space: nowrap; */
+    /* Cel mai simplu este să te asiguri că au o lățime suficientă sau să le lași să se extindă cu scroll. */
     border-bottom: none;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
+    text-align: center; /* Centrează textul în butoane */
   }
   .sidebar li:last-child {
     border-bottom: none;
@@ -506,7 +520,7 @@ export default {
 /* Pentru ecrane foarte mici (telefoane) */
 @media (max-width: 576px) {
   .modern-roadmap {
-    padding: 0; /* Padding-ul exterior gestionat de App.vue */
+    padding: 0;
     gap: 10px;
   }
 
@@ -521,10 +535,12 @@ export default {
   }
   .sidebar ul {
     gap: 8px;
+    /* min-height: 40px; /* Optional: Asigură o înălțime minimă pentru rândul de butoane */
   }
   .sidebar li {
     padding: 6px 10px;
     font-size: 0.9rem;
+    min-width: 70px; /* Ajustează această valoare pentru telefoane */
   }
 
   .content {
