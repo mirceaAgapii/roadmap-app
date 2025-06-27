@@ -12,18 +12,23 @@
           ],
           "resources": [
             {
+              "type": "BOOK",
               "text": "Java 8 in Action. Lambdas, Streams, and functional-style programming [Raoul-Gabriel Urma, Mario Fusco, Alan Mycroft]"
             },
             {
+              "type": "BOOK",
               "text": "Effective Java [Joshua Bloch]"
             },
             {
+              "type": "BOOK",
               "text": "Java: The Complete Reference [Herbert Schildt]"
             },
             {
+              "type": "BOOK",
               "text": "OCP Oracle Certified Professional Java SE 17 Developer Study Guide [Jeanne Boyarsky, Scott Selikoff]"
             },
             {
+              "type": "BOOK",
               "text": "The Well-Grounded Java Developer, Second Edition [Benjamin Evans, Martijn Verburg, Jason Clark]"
             }
           ]
@@ -36,18 +41,23 @@
           ],
           "resources": [
             {
+              "type": "BOOK",
               "text": "Java 8 in Action. Lambdas, Streams, and functional-style programming [Raoul-Gabriel Urma, Mario Fusco, Alan Mycroft]"
             },
             {
+              "type": "BOOK",
               "text": "Effective Java [Joshua Bloch]"
             },
             {
+              "type": "BOOK",
               "text": "Java: The Complete Reference [Herbert Schildt]"
             },
             {
+              "type": "BOOK",
               "text": "OCP Oracle Certified Professional Java SE 17 Developer Study Guide [Jeanne Boyarsky, Scott Selikoff]"
             },
             {
+              "type": "BOOK",
               "text": "The Well-Grounded Java Developer, Second Edition [Benjamin Evans, Martijn Verburg, Jason Clark]"
             }
           ]
@@ -60,18 +70,23 @@
           ],
           "resources": [
             {
+              "type": "BOOK",
               "text": "Java 8 in Action. Lambdas, Streams, and functional-style programming [Raoul-Gabriel Urma, Mario Fusco, Alan Mycroft]"
             },
             {
+              "type": "BOOK",
               "text": "Effective Java [Joshua Bloch]"
             },
             {
+              "type": "BOOK",
               "text": "Java: The Complete Reference [Herbert Schildt]"
             },
             {
+              "type": "BOOK",
               "text": "OCP Oracle Certified Professional Java SE 17 Developer Study Guide [Jeanne Boyarsky, Scott Selikoff]"
             },
             {
+              "type": "BOOK",
               "text": "The Well-Grounded Java Developer, Second Edition [Benjamin Evans, Martijn Verburg, Jason Clark]"
             }
           ]
@@ -84,18 +99,23 @@
           ],
           "resources": [
             {
+              "type": "BOOK",
               "text": "Java 8 in Action. Lambdas, Streams, and functional-style programming [Raoul-Gabriel Urma, Mario Fusco, Alan Mycroft]"
             },
             {
+              "type": "BOOK",
               "text": "Effective Java [Joshua Bloch]"
             },
             {
+              "type": "BOOK",
               "text": "Java: The Complete Reference [Herbert Schildt]"
             },
             {
+              "type": "BOOK",
               "text": "OCP Oracle Certified Professional Java SE 17 Developer Study Guide [Jeanne Boyarsky, Scott Selikoff]"
             },
             {
+              "type": "BOOK",
               "text": "The Well-Grounded Java Developer, Second Edition [Benjamin Evans, Martijn Verburg, Jason Clark]"
             }
           ]
@@ -116,9 +136,12 @@
           ],
           "resources": [
             {
-              "text": "Git Cheatsheet \u2013 GitHub"
+              "type": "WEBSITE",
+              "text": "Git Cheatsheet \u2013 GitHub",
+              "url": "https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf"
             },
             {
+              "type": "BOOK",
               "text": "The Phoenix Project: A Novel About IT, DevOps, and Helping Your Business Win [Gene Kim, George Spafford, Kevin Behr]"
             }
           ]
@@ -131,18 +154,24 @@
           ],
           "resources": [
             {
+              "type": "BOOK",
               "text": "Java Persistence with Hibernate [Christian Bauer, Gavin King]"
             },
             {
-              "text": "Spring Boot Crash Course - Java Brains"
+              "type": "VIDEO",
+              "text": "Spring Boot Crash Course - Java Brains",
+              "url": "https://www.youtube.com/watch?v=msXL2oDexqw"
             },
             {
+              "type": "BOOK",
               "text": "REST API Design Rulebook [Mark Masse]"
             },
             {
+              "type": "BOOK",
               "text": "RESTful Web Services [Leonard Richardson, Sam Ruby]"
             },
             {
+              "type": "BOOK",
               "text": "Spring Boot in Action [Craig Walls]"
             }
           ]
@@ -168,18 +197,23 @@
           ],
           "resources": [
             {
+              "type": "BOOK",
               "text": "Java 8 in Action. Lambdas, Streams, and functional-style programming [Raoul-Gabriel Urma, Mario Fusco, Alan Mycroft]"
             },
             {
+              "type": "BOOK",
               "text": "Effective Java [Joshua Bloch]"
             },
             {
+              "type": "BOOK",
               "text": "Java: The Complete Reference [Herbert Schildt]"
             },
             {
+              "type": "BOOK",
               "text": "OCP Oracle Certified Professional Java SE 17 Developer Study Guide [Jeanne Boyarsky, Scott Selikoff]"
             },
             {
+              "type": "BOOK",
               "text": "The Well-Grounded Java Developer, Second Edition [Benjamin Evans, Martijn Verburg, Jason Clark]"
             }
           ]
@@ -192,18 +226,23 @@
           ],
           "resources": [
             {
+              "type": "BOOK",
               "text": "Java 8 in Action. Lambdas, Streams, and functional-style programming [Raoul-Gabriel Urma, Mario Fusco, Alan Mycroft]"
             },
             {
+              "type": "BOOK",
               "text": "Effective Java [Joshua Bloch]"
             },
             {
+              "type": "BOOK",
               "text": "Java: The Complete Reference [Herbert Schildt]"
             },
             {
+              "type": "BOOK",
               "text": "OCP Oracle Certified Professional Java SE 17 Developer Study Guide [Jeanne Boyarsky, Scott Selikoff]"
             },
             {
+              "type": "BOOK",
               "text": "The Well-Grounded Java Developer, Second Edition [Benjamin Evans, Martijn Verburg, Jason Clark]"
             }
           ]
@@ -224,9 +263,12 @@
           ],
           "resources": [
             {
-              "text": "Git Cheatsheet \u2013 GitHub"
+              "type": "WEBSITE",
+              "text": "Git Cheatsheet \u2013 GitHub",
+              "url": "https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf"
             },
             {
+              "type": "BOOK",
               "text": "The Phoenix Project: A Novel About IT, DevOps, and Helping Your Business Win [Gene Kim, George Spafford, Kevin Behr]"
             }
           ]
@@ -239,6 +281,7 @@
           ],
           "resources": [
             {
+              "type": "BOOK",
               "text": "JUnit in Action (2nd Edition) [Petar Tahchiev]"
             }
           ]
@@ -251,24 +294,32 @@
           ],
           "resources": [
             {
+              "type": "BOOK",
               "text": "Code Simplicity [Max Kanat-Alexander]"
             },
             {
+              "type": "BOOK",
               "text": "A Philosophy of Software Design, 2nd Edition [Michael T. Nygard]"
             },
             {
+              "type": "BOOK",
               "text": "The Passionate Programmer [Chad Fowler]"
             },
             {
+              "type": "BOOK",
               "text": "Soft Skills: The Software Developer\u2019s Life Manual [John Sonmez]"
             },
             {
-              "text": "Celeste Headlee: 10 ways to have a better conversation | TED"
+              "type": "VIDEO",
+              "text": "Celeste Headlee: 10 ways to have a better conversation | TED",
+              "url": "https://www.youtube.com/watch?v=R1vskiVDwl4"
             },
             {
+              "type": "BOOK",
               "text": "The Software Craftsman [Sandro Mancuso]"
             },
             {
+              "type": "BOOK",
               "text": "The Clean Coder [Robert C. Martin]"
             }
           ]
@@ -281,24 +332,32 @@
           ],
           "resources": [
             {
+              "type": "BOOK",
               "text": "Code Simplicity [Max Kanat-Alexander]"
             },
             {
+              "type": "BOOK",
               "text": "A Philosophy of Software Design, 2nd Edition [Michael T. Nygard]"
             },
             {
+              "type": "BOOK",
               "text": "The Passionate Programmer [Chad Fowler]"
             },
             {
+              "type": "BOOK",
               "text": "Soft Skills: The Software Developer\u2019s Life Manual [John Sonmez]"
             },
             {
-              "text": "Celeste Headlee: 10 ways to have a better conversation | TED"
+              "type": "VIDEO",
+              "text": "Celeste Headlee: 10 ways to have a better conversation | TED",
+              "url": "https://www.youtube.com/watch?v=R1vskiVDwl4"
             },
             {
+              "type": "BOOK",
               "text": "The Software Craftsman [Sandro Mancuso]"
             },
             {
+              "type": "BOOK",
               "text": "The Clean Coder [Robert C. Martin]"
             }
           ]
@@ -319,18 +378,24 @@
           ],
           "resources": [
             {
+              "type": "BOOK",
               "text": "Java Persistence with Hibernate [Christian Bauer, Gavin King]"
             },
             {
-              "text": "Spring Boot Crash Course - Java Brains"
+              "type": "VIDEO",
+              "text": "Spring Boot Crash Course - Java Brains",
+              "url": "https://www.youtube.com/watch?v=msXL2oDexqw"
             },
             {
+              "type": "BOOK",
               "text": "REST API Design Rulebook [Mark Masse]"
             },
             {
+              "type": "BOOK",
               "text": "RESTful Web Services [Leonard Richardson, Sam Ruby]"
             },
             {
+              "type": "BOOK",
               "text": "Spring Boot in Action [Craig Walls]"
             }
           ]
@@ -356,18 +421,23 @@
           ],
           "resources": [
             {
+              "type": "BOOK",
               "text": "Java 8 in Action. Lambdas, Streams, and functional-style programming [Raoul-Gabriel Urma, Mario Fusco, Alan Mycroft]"
             },
             {
+              "type": "BOOK",
               "text": "Effective Java [Joshua Bloch]"
             },
             {
+              "type": "BOOK",
               "text": "Java: The Complete Reference [Herbert Schildt]"
             },
             {
+              "type": "BOOK",
               "text": "OCP Oracle Certified Professional Java SE 17 Developer Study Guide [Jeanne Boyarsky, Scott Selikoff]"
             },
             {
+              "type": "BOOK",
               "text": "The Well-Grounded Java Developer, Second Edition [Benjamin Evans, Martijn Verburg, Jason Clark]"
             }
           ]
@@ -380,18 +450,24 @@
           ],
           "resources": [
             {
+              "type": "BOOK",
               "text": "Java Persistence with Hibernate [Christian Bauer, Gavin King]"
             },
             {
-              "text": "Spring Boot Crash Course - Java Brains"
+              "type": "VIDEO",
+              "text": "Spring Boot Crash Course - Java Brains",
+              "url": "https://www.youtube.com/watch?v=msXL2oDexqw"
             },
             {
+              "type": "BOOK",
               "text": "REST API Design Rulebook [Mark Masse]"
             },
             {
+              "type": "BOOK",
               "text": "RESTful Web Services [Leonard Richardson, Sam Ruby]"
             },
             {
+              "type": "BOOK",
               "text": "Spring Boot in Action [Craig Walls]"
             }
           ]
@@ -404,39 +480,53 @@
           ],
           "resources": [
             {
-              "text": "Refactoring.Guru (Design Patterns)"
+              "type": "WEBSITE",
+              "text": "Refactoring.Guru (Design Patterns)",
+              "url": "https://refactoring.guru/design-patterns"
             },
             {
+              "type": "BOOK",
               "text": "Java Persistence with Hibernate [Christian Bauer, Gavin King]"
             },
             {
+              "type": "BOOK",
               "text": "Clean Architecture: A Craftsman's Guide to Software Structure and Design [Robert C. Martin]"
             },
             {
+              "type": "BOOK",
               "text": "Release It! Design and Deploy Production-Ready Software [Michael T. Nygard]"
             },
             {
-              "text": "Spring Boot Crash Course - Java Brains"
+              "type": "VIDEO",
+              "text": "Spring Boot Crash Course - Java Brains",
+              "url": "https://www.youtube.com/watch?v=msXL2oDexqw"
             },
             {
+              "type": "BOOK",
               "text": "Head First Design Patterns (2nd Edition) [Eric Freeman]"
             },
             {
+              "type": "BOOK",
               "text": "Software Architecture Patterns [Mark Richards]"
             },
             {
+              "type": "BOOK",
               "text": "Clean Code [Robert C. Martin]"
             },
             {
+              "type": "BOOK",
               "text": "REST API Design Rulebook [Mark Masse]"
             },
             {
+              "type": "BOOK",
               "text": "RESTful Web Services [Leonard Richardson, Sam Ruby]"
             },
             {
+              "type": "BOOK",
               "text": "Spring Boot in Action [Craig Walls]"
             },
             {
+              "type": "BOOK",
               "text": "Fundamentals of Software Architecture. An Engineering Approach [Mark Richards, Neal Ford]"
             }
           ]
@@ -449,24 +539,32 @@
           ],
           "resources": [
             {
-              "text": "Refactoring.Guru (Design Patterns)"
+              "type": "WEBSITE",
+              "text": "Refactoring.Guru (Design Patterns)",
+              "url": "https://refactoring.guru/design-patterns"
             },
             {
+              "type": "BOOK",
               "text": "Clean Architecture: A Craftsman's Guide to Software Structure and Design [Robert C. Martin]"
             },
             {
+              "type": "BOOK",
               "text": "Release It! Design and Deploy Production-Ready Software [Michael T. Nygard]"
             },
             {
+              "type": "BOOK",
               "text": "Head First Design Patterns (2nd Edition) [Eric Freeman]"
             },
             {
+              "type": "BOOK",
               "text": "Software Architecture Patterns [Mark Richards]"
             },
             {
+              "type": "BOOK",
               "text": "Clean Code [Robert C. Martin]"
             },
             {
+              "type": "BOOK",
               "text": "Fundamentals of Software Architecture. An Engineering Approach [Mark Richards, Neal Ford]"
             }
           ]
@@ -487,39 +585,53 @@
           ],
           "resources": [
             {
-              "text": "Refactoring.Guru (Design Patterns)"
+              "type": "WEBSITE",
+              "text": "Refactoring.Guru (Design Patterns)",
+              "url": "https://refactoring.guru/design-patterns"
             },
             {
+              "type": "BOOK",
               "text": "Java Persistence with Hibernate [Christian Bauer, Gavin King]"
             },
             {
+              "type": "BOOK",
               "text": "Clean Architecture: A Craftsman's Guide to Software Structure and Design [Robert C. Martin]"
             },
             {
+              "type": "BOOK",
               "text": "Release It! Design and Deploy Production-Ready Software [Michael T. Nygard]"
             },
             {
-              "text": "Spring Boot Crash Course - Java Brains"
+              "type": "VIDEO",
+              "text": "Spring Boot Crash Course - Java Brains",
+              "url": "https://www.youtube.com/watch?v=msXL2oDexqw"
             },
             {
+              "type": "BOOK",
               "text": "Head First Design Patterns (2nd Edition) [Eric Freeman]"
             },
             {
+              "type": "BOOK",
               "text": "Software Architecture Patterns [Mark Richards]"
             },
             {
+              "type": "BOOK",
               "text": "Clean Code [Robert C. Martin]"
             },
             {
+              "type": "BOOK",
               "text": "REST API Design Rulebook [Mark Masse]"
             },
             {
+              "type": "BOOK",
               "text": "RESTful Web Services [Leonard Richardson, Sam Ruby]"
             },
             {
+              "type": "BOOK",
               "text": "Spring Boot in Action [Craig Walls]"
             },
             {
+              "type": "BOOK",
               "text": "Fundamentals of Software Architecture. An Engineering Approach [Mark Richards, Neal Ford]"
             }
           ]
@@ -532,9 +644,12 @@
           ],
           "resources": [
             {
-              "text": "Git Cheatsheet \u2013 GitHub"
+              "type": "WEBSITE",
+              "text": "Git Cheatsheet \u2013 GitHub",
+              "url": "https://github.com/cheat-sheet/git-cheat-sheet"
             },
             {
+              "type": "BOOK",
               "text": "The Phoenix Project: A Novel About IT, DevOps, and Helping Your Business Win [Gene Kim, George Spafford, Kevin Behr]"
             }
           ]
@@ -547,24 +662,32 @@
           ],
           "resources": [
             {
-              "text": "Refactoring.Guru (Design Patterns)"
+              "type": "WEBSITE",
+              "text": "Refactoring.Guru (Design Patterns)",
+              "url": "https://refactoring.guru/design-patterns"
             },
             {
+              "type": "BOOK",
               "text": "Clean Architecture: A Craftsman's Guide to Software Structure and Design [Robert C. Martin]"
             },
             {
+              "type": "BOOK", 
               "text": "Release It! Design and Deploy Production-Ready Software [Michael T. Nygard]"
             },
             {
+              "type": "BOOK",
               "text": "Head First Design Patterns (2nd Edition) [Eric Freeman]"
             },
             {
+              "type": "BOOK",
               "text": "Software Architecture Patterns [Mark Richards]"
             },
             {
+              "type": "BOOK",
               "text": "Clean Code [Robert C. Martin]"
             },
             {
+              "type": "BOOK",
               "text": "Fundamentals of Software Architecture. An Engineering Approach [Mark Richards, Neal Ford]"
             }
           ]
@@ -577,6 +700,7 @@
           ],
           "resources": [
             {
+              "type": "BOOK",
               "text": "JUnit in Action (2nd Edition) [Petar Tahchiev]"
             }
           ]
@@ -594,18 +718,23 @@
           ],
           "resources": [
             {
+              "type": "BOOK",
               "text": "Java 8 in Action. Lambdas, Streams, and functional-style programming [Raoul-Gabriel Urma, Mario Fusco, Alan Mycroft]"
             },
             {
+              "type": "BOOK",
               "text": "Effective Java [Joshua Bloch]"
             },
             {
+              "type": "BOOK",
               "text": "Java: The Complete Reference [Herbert Schildt]"
             },
             {
+              "type": "BOOK",
               "text": "OCP Oracle Certified Professional Java SE 17 Developer Study Guide [Jeanne Boyarsky, Scott Selikoff]"
             },
             {
+              "type": "BOOK",
               "text": "The Well-Grounded Java Developer, Second Edition [Benjamin Evans, Martijn Verburg, Jason Clark]"
             }
           ]
@@ -618,18 +747,24 @@
           ],
           "resources": [
             {
+              "type": "BOOK",
               "text": "Java Persistence with Hibernate [Christian Bauer, Gavin King]"
             },
             {
-              "text": "Spring Boot Crash Course - Java Brains"
+              "type": "VIDEO",
+              "text": "Spring Boot Crash Course - Java Brains",
+              "url": "https://www.youtube.com/watch?v=msXL2oDexqw"
             },
             {
+              "type": "BOOK",
               "text": "REST API Design Rulebook [Mark Masse]"
             },
             {
+              "type": "BOOK",
               "text": "RESTful Web Services [Leonard Richardson, Sam Ruby]"
             },
             {
+              "type": "BOOK",
               "text": "Spring Boot in Action [Craig Walls]"
             }
           ]
@@ -642,18 +777,24 @@
           ],
           "resources": [
             {
+              "type": "BOOK",
               "text": "Java Persistence with Hibernate [Christian Bauer, Gavin King]"
             },
             {
-              "text": "Spring Boot Crash Course - Java Brains"
+              "type": "VIDEO",
+              "text": "Spring Boot Crash Course - Java Brains",
+              "url": "https://www.youtube.com/watch?v=msXL2oDexqw"
             },
             {
+              "type": "BOOK",
               "text": "REST API Design Rulebook [Mark Masse]"
             },
             {
+              "type": "BOOK",
               "text": "RESTful Web Services [Leonard Richardson, Sam Ruby]"
             },
             {
+              "type": "BOOK",
               "text": "Spring Boot in Action [Craig Walls]"
             }
           ]
@@ -666,24 +807,32 @@
           ],
           "resources": [
             {
-              "text": "Refactoring.Guru (Design Patterns)"
+              "type": "WEBSITE",
+              "text": "Refactoring.Guru (Design Patterns)",
+              "url": "https://refactoring.guru/design-patterns"
             },
             {
+              "type": "BOOK",
               "text": "Clean Architecture: A Craftsman's Guide to Software Structure and Design [Robert C. Martin]"
             },
             {
+              "type": "BOOK",
               "text": "Release It! Design and Deploy Production-Ready Software [Michael T. Nygard]"
             },
             {
+              "type": "BOOK",
               "text": "Head First Design Patterns (2nd Edition) [Eric Freeman]"
             },
             {
+              "type": "BOOK",
               "text": "Software Architecture Patterns [Mark Richards]"
             },
             {
+              "type": "BOOK",
               "text": "Clean Code [Robert C. Martin]"
             },
             {
+              "type": "BOOK",
               "text": "Fundamentals of Software Architecture. An Engineering Approach [Mark Richards, Neal Ford]"
             }
           ]
@@ -696,24 +845,32 @@
           ],
           "resources": [
             {
-              "text": "Refactoring.Guru (Design Patterns)"
+              "type": "WEBSITE",
+              "text": "Refactoring.Guru (Design Patterns)",
+              "url": "https://refactoring.guru/design-patterns"
             },
             {
+              "type": "BOOK",
               "text": "Clean Architecture: A Craftsman's Guide to Software Structure and Design [Robert C. Martin]"
             },
             {
+              "type": "BOOK",
               "text": "Release It! Design and Deploy Production-Ready Software [Michael T. Nygard]"
             },
             {
+              "type": "BOOK",
               "text": "Head First Design Patterns (2nd Edition) [Eric Freeman]"
             },
             {
+              "type": "BOOK",
               "text": "Software Architecture Patterns [Mark Richards]"
             },
             {
+              "type": "BOOK",
               "text": "Clean Code [Robert C. Martin]"
             },
             {
+              "type": "BOOK",
               "text": "Fundamentals of Software Architecture. An Engineering Approach [Mark Richards, Neal Ford]"
             }
           ]
@@ -726,24 +883,32 @@
           ],
           "resources": [
             {
-              "text": "Refactoring.Guru (Design Patterns)"
+              "type": "WEBSITE",
+              "text": "Refactoring.Guru (Design Patterns)",
+              "url": "https://refactoring.guru/design-patterns"
             },
             {
+              "type": "BOOK",
               "text": "Clean Architecture: A Craftsman's Guide to Software Structure and Design [Robert C. Martin]"
             },
             {
+              "type": "BOOK",
               "text": "Release It! Design and Deploy Production-Ready Software [Michael T. Nygard]"
             },
             {
+              "type": "BOOK",
               "text": "Head First Design Patterns (2nd Edition) [Eric Freeman]"
             },
             {
+              "type": "BOOK",
               "text": "Software Architecture Patterns [Mark Richards]"
             },
             {
+              "type": "BOOK",
               "text": "Clean Code [Robert C. Martin]"
             },
             {
+              "type": "BOOK",
               "text": "Fundamentals of Software Architecture. An Engineering Approach [Mark Richards, Neal Ford]"
             }
           ]
@@ -756,6 +921,7 @@
           ],
           "resources": [
             {
+              "type": "BOOK",
               "text": "Java Performance: The Definitive Guide [Scott Oaks]"
             }
           ]
@@ -768,18 +934,23 @@
           ],
           "resources": [
             {
+              "type": "BOOK",
               "text": "Java 8 in Action. Lambdas, Streams, and functional-style programming [Raoul-Gabriel Urma, Mario Fusco, Alan Mycroft]"
             },
             {
+              "type": "BOOK",
               "text": "Effective Java [Joshua Bloch]"
             },
             {
+              "type": "BOOK",
               "text": "Java: The Complete Reference [Herbert Schildt]"
             },
             {
+              "type": "BOOK",
               "text": "OCP Oracle Certified Professional Java SE 17 Developer Study Guide [Jeanne Boyarsky, Scott Selikoff]"
             },
             {
+              "type": "BOOK",
               "text": "The Well-Grounded Java Developer, Second Edition [Benjamin Evans, Martijn Verburg, Jason Clark]"
             }
           ]
@@ -797,6 +968,7 @@
           ],
           "resources": [
             {
+              "type": "BOOK",
               "text": "Java Performance: The Definitive Guide [Scott Oaks]"
             }
           ]
@@ -809,6 +981,7 @@
           ],
           "resources": [
             {
+              "type": "BOOK",
               "text": "Java Performance: The Definitive Guide [Scott Oaks]"
             }
           ]
@@ -829,24 +1002,32 @@
           ],
           "resources": [
             {
+              "type": "BOOK",
               "text": "Code Simplicity [Max Kanat-Alexander]"
             },
             {
+              "type": "BOOK",
               "text": "A Philosophy of Software Design, 2nd Edition [Michael T. Nygard]"
             },
             {
+              "type": "BOOK",
               "text": "The Passionate Programmer [Chad Fowler]"
             },
             {
+              "type": "BOOK", 
               "text": "Soft Skills: The Software Developer\u2019s Life Manual [John Sonmez]"
             },
             {
-              "text": "Celeste Headlee: 10 ways to have a better conversation | TED"
+              "type": "VIDEO",
+              "text": "Celeste Headlee: 10 ways to have a better conversation | TED",
+              "url": "https://www.youtube.com/watch?v=R1vskiVDwl4"
             },
             {
+              "type": "BOOK",
               "text": "The Software Craftsman [Sandro Mancuso]"
             },
             {
+              "type": "BOOK",
               "text": "The Clean Coder [Robert C. Martin]"
             }
           ]
@@ -859,26 +1040,33 @@
           ],
           "resources": [
             {
+              "type": "BOOK",
               "text": "Code Simplicity [Max Kanat-Alexander]"
             },
             {
+              "type": "BOOK",
               "text": "A Philosophy of Software Design, 2nd Edition [Michael T. Nygard]"
             },
             {
+              "type": "BOOK",
               "text": "The Passionate Programmer [Chad Fowler]"
             },
             {
+              "type": "BOOK",
               "text": "Soft Skills: The Software Developer\u2019s Life Manual [John Sonmez]"
             },
             {
-              "text": "Celeste Headlee: 10 ways to have a better conversation | TED"
+              "type": "VIDEO",
+              "text": "Celeste Headlee: 10 ways to have a better conversation | TED",
+              "url": "https://www.youtube.com/watch?v=R1vskiVDwl4"
             },
             {
+              "type": "BOOK",
               "text": "The Software Craftsman [Sandro Mancuso]"
             },
             {
-              "text": "The Clean Coder [Robert C. Martin]",
-              "url":  "https://www.amazon.com/Clean-Coder-Conduct-Professional-Programmers/dp/0136083239"
+              "type": "BOOK",
+              "text": "The Clean Coder [Robert C. Martin]"
             }
           ]
         },

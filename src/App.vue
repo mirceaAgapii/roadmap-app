@@ -48,6 +48,7 @@ export default {
   --not-active-bg: #f0c4b2;
   --main-content-bg: #fafcfc;
   --drawer-bg: #7f5d4f;
+  --plain-text: #020202;
 }
 
 html, body, #app {

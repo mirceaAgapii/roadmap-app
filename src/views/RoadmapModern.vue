@@ -40,24 +40,29 @@
 
     <!-- Bottom Drawer Details -->
     <!-- <transition name="slide-up"> -->
-      <div class="details-drawer" v-if="selectedItem">
-        <h2>{{ selectedItem.title }}</h2>
-        <p>{{ selectedItem.description }}</p>
-        <div v-if="selectedItem.resources && selectedItem.resources.length">
-          <h3>Resources</h3>
-          <ul>
-            <li v-for="(res, i) in selectedItem.resources" :key="i">
-                <span v-if="!res.url">{{ res.text }}</span>
-                <a v-if="res.url" :href="res.url" target="_blank">{{ res.text }}</a>
-            </li>
-          </ul>
-        </div>
+    <div class="details-drawer" v-if="selectedItem">
+      <h2>{{ selectedItem.title }}</h2>
+      <p>{{ selectedItem.description }}</p>
+      <div v-if="selectedItem.resources && selectedItem.resources.length">
+        <h3>Resources</h3>
+        <ul class="resource-list">
+          <li v-for="(res, i) in selectedItem.resources" :key="i">
+            <span class="icon">{{ getResourceIcon(res.type) }}</span>
+            <span v-if="!res.url">{{ res.text }}</span>
+            <a v-else :href="res.url" target="_blank" rel="noopener noreferrer">
+              {{ res.text }}
+            </a>
+          </li>
+        </ul>
+
       </div>
-    <!-- </transition> -->
+    </div>
   </div>
 </template>
 
 <script>
+import { getResourceIcon } from '@/utils/getResourceIcon';
+
 export default {
   name: 'RoadmapModern',
   data() {
@@ -85,6 +90,7 @@ export default {
     this.loadRoadmaps();
   },
   methods: {
+    getResourceIcon,
     async loadRoadmaps() {
       try {
         const indexRes = await fetch('/roadmaps/index.json');
@@ -104,7 +110,7 @@ export default {
       this.selectedLevelIndex = 0;
       this.selectedItem = null;
 
-      fetch('http://localhost:3001/api/views/' + this.selectedRoadmap.generalTitle , {method: 'POST'})
+      fetch('http://localhost:3001/api/views/' + this.selectedRoadmap.generalTitle, { method: 'POST' })
     },
     selectItem(item) {
       this.selectedItem = item;
@@ -120,7 +126,8 @@ export default {
 .modern-roadmap {
   display: grid;
   grid-template-columns: 250px 1fr;
-  grid-template-rows: 1fr auto; /* conținut + footer */
+  grid-template-rows: 1fr auto;
+  /* conținut + footer */
   grid-template-areas:
     "sidebar main"
     "sidebar footer";
@@ -264,7 +271,7 @@ export default {
   font-size: 12px;
   padding: 4px 10px;
   border-radius: 999px;
-  background: var(--not-active-bg);
+  background: var(--plain-text);
   color: var(--primary-text);
   font-weight: 500;
 }
@@ -313,10 +320,28 @@ export default {
   transition: color 0.2s ease;
 }
 
+.resource-list {
+  list-style: none;
+  padding: 0;
+}
+
+.resource-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.icon {
+  width: 24px;
+  text-align: center;
+}
+
 .slide-up-enter-active,
 .slide-up-leave-active {
   transition: transform 0.3s ease;
 }
+
 .slide-up-enter-from,
 .slide-up-leave-to {
   transform: translateY(100%);
