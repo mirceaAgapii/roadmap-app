@@ -48,6 +48,12 @@
     <div class="details-drawer" v-if="selectedItem">
       <h2>{{ selectedItem.title }}</h2>
       <p>{{ selectedItem.description }}</p>
+      <h3>Subtopics</h3>
+      <ul class="subtopics-list">
+        <li v-for="(subtopic, i) in selectedItem.subtopics" :key="i">
+          <span v-if="subtopic.title">{{ subtopic.title }}</span>
+        </li>
+      </ul>
       <div v-if="selectedItem.resources && selectedItem.resources.length">
         <h3>Resources</h3>
         <ul class="resource-list">
