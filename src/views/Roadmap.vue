@@ -1,362 +1,421 @@
 <template>
-  <div class="roadmap" v-if="selectedRoadmap" @click="handleClickOutside">
-    <h1>{{ selectedRoadmap.generalTitle }}</h1>
+  <div class="modern-roadmap-v2">
+    <!-- HEADER: one-line list of roadmaps -->
+    <header class="rm-header" v-if="roadmaps.length">
+      <nav class="rm-header-nav">
+        <button v-for="(rm, i) in roadmaps" :key="i" class="rm-header-btn"
+          :class="{ active: i === selectedRoadmapIndex }" @click="selectRoadmap(i)">
+          {{ rm.title }}
+        </button>
+      </nav>
+    </header>
 
-    <!-- Tabs for selecting roadmaps -->
-    <div class="roadmap-tabs">
-      <button v-for="(roadmap, index) in roadmaps" :key="index" @click="selectRoadmap(index)"
-        :class="{ active: index === selectedRoadmapIndex }">
-        {{ roadmap.generalTitle }}
-      </button>
-    </div>
+    <!-- MAIN CONTENT (rows = categories) -->
+    <div class="content" v-if="selectedRoadmap" @click.self="clearSelectedItem">
+      <h1 class="roadmap-title">{{ selectedRoadmapTitle }}</h1>
 
-    <div class="roadmap-container">
-      <svg id="svgContainer" class="svg-lines"></svg>
-
-      <div v-for="(item, index) in selectedRoadmap.roadmap" :key="index" class="roadmap-item-container">
-        <!-- Parent -->
-        <div :id="'parent-' + index" class="roadmap-item-parent">
-          <div class="roadmap-item" @click.stop="selectItem(item)">
-            <h2>{{ item.title }}</h2>
-          </div>
-        </div>
-
-        <!-- Children -->
-        <div v-if="item.children" class="roadmap-children">
-          <div v-for="(child, childIndex) in item.children" :key="childIndex" class="roadmap-item-container">
-            <div :id="'child-' + index + '-' + childIndex" class="roadmap-item" @click.stop="selectItem(child)">
-              <h2>{{ child.title }}</h2>
+      <section class="lanes"
+        :style="{ '--rows': (selectedRoadmap && selectedRoadmap.categories ? selectedRoadmap.categories.length : 1) }">
+        <div v-for="(category, cIdx) in (selectedRoadmap.categories || [])" :key="cIdx" class="lane-row">
+          <div class="lane-flex">
+            <div v-for="(topic, tIdx) in (category.category_topics || [])" :key="tIdx" class="topic-card"
+              @click="selectItem(topic)">
+              <div class="topic-title">
+                {{ topic.topic_name }}
+              </div>
+              <div class="tags">
+                <span class="tag">{{ (topic.tags && topic.tags[0]) || '—' }}</span>
+              </div>
             </div>
           </div>
         </div>
+      </section>
+    </div>
+
+    <!-- CENTERED MODAL -->
+    <div class="overlay" v-if="selectedItem" @click.self="clearSelectedItem" tabindex="-1"
+      @keydown.esc="clearSelectedItem">
+      <div class="modal" role="dialog" aria-modal="true">
+        <button class="close" aria-label="Close" @click="clearSelectedItem">×</button>
+
+        <h2 class="title">{{ selectedItem.topic_name }}</h2>
+
+        <section class="block" v-if="selectedItem.description">
+          <h3>Description</h3>
+          <p>{{ selectedItem.description }}</p>
+        </section>
+
+        <section class="block" v-if="hasSubTopics(selectedItem)">
+          <h3>Subtopics</h3>
+          <ul class="bullets">
+            <li v-for="(s, i) in selectedItem.sub_topics" :key="i">
+              {{ s.title }}
+            </li>
+          </ul>
+        </section>
+
+        <section class="block" v-if="hasResources(selectedItem)">
+          <h3>Resources</h3>
+          <ul class="resource-list">
+            <li v-for="(res, i) in selectedItem.resources" :key="i">
+              <span class="icon">{{ getResourceIcon(res.type) }}</span>
+              <span v-if="!res.url">{{ res.text }}</span>
+              <a v-else :href="res.url" target="_blank" rel="noopener noreferrer">
+                {{ res.text }}
+              </a>
+            </li>
+          </ul>
+        </section>
       </div>
     </div>
 
-    <!-- Overlay -->
-    <div v-if="selectedItem" class="overlay" @click="selectedItem = null"></div>
-
-
-    <!-- Sidebar with selected item information -->
-    <div ref="sidebar" class="sidebar" :class="{ show: selectedItem }">
-      <h2 v-if="selectedItem">{{ selectedItem.title }}</h2>
-      <p v-if="selectedItem">{{ selectedItem.description }}</p>
-
-      <!-- Resources Footer -->
-      <div v-if="selectedItem && selectedItem.resources && selectedItem.resources.length" class="sidebar-footer">
-        <h3>Additional Resources</h3>
-        <ul>
-          <li v-for="(resource, index) in selectedItem.resources" :key="index">
-            <a :href="resource.url" target="_blank">{{ resource.text }}</a>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <div v-if="!roadmaps.length" class="empty-state">Loading roadmaps…</div>
   </div>
 </template>
 
 <script>
-import { nextTick } from "vue";
+import { getResourceIcon } from '@/utils/getResourceIcon';
 
 export default {
-  name: "Roadmap",
+  name: 'RoadmapModernV2',
+  props: {
+    showHeader: { type: Boolean, default: false } // kept for compatibility
+  },
   data() {
     return {
-      roadmaps: [],
+      roadmaps: [],               // [{ title, data }]
       selectedRoadmapIndex: 0,
-      selectedItem: null,
+      selectedItem: null
     };
   },
   computed: {
     selectedRoadmap() {
-      return this.roadmaps.length > 0 ? this.roadmaps[this.selectedRoadmapIndex] : null;
+      return (this.roadmaps[this.selectedRoadmapIndex] &&
+        this.roadmaps[this.selectedRoadmapIndex].data) || null;
+    },
+    selectedRoadmapTitle() {
+      return (this.roadmaps[this.selectedRoadmapIndex] &&
+        this.roadmaps[this.selectedRoadmapIndex].title) || '';
     }
   },
   mounted() {
     this.loadRoadmaps();
-    window.addEventListener("resize", this.drawLines);
-  },
-  beforeUnmount() {
-    window.removeEventListener("resize", this.drawLines);
   },
   methods: {
+    getResourceIcon,
+    hasSubTopics(item) {
+      return item && item.sub_topics && item.sub_topics.length > 0;
+    },
+    hasResources(item) {
+      return item && item.resources && item.resources.length > 0;
+    },
     async loadRoadmaps() {
       try {
         const indexRes = await fetch('/roadmaps/index.json');
-        const files = await indexRes.json();
+        const files = await indexRes.json(); // e.g., ["java.json", …]
 
-        const roadmapPromises = files.map(file =>
-          fetch(`/roadmaps/${file}`).then(res => res.json())
-        );
+        const roadmapPromises = files.map(async (file) => {
+          const data = await fetch(`/roadmaps/${file}`).then((res) => res.json());
+          const title = data.road_map_title || data.generalTitle || file;
+          return { title, data };
+        });
 
         this.roadmaps = await Promise.all(roadmapPromises);
 
-        this.$nextTick(() => {
-          this.drawLines();
-        });
+        if (this.roadmaps[0]) this.trackView(this.roadmaps[0].title);
       } catch (err) {
-        console.error("Failed to load roadmaps:", err);
+        console.error('Failed to load roadmaps:', err);
       }
     },
     selectRoadmap(index) {
       this.selectedRoadmapIndex = index;
       this.selectedItem = null;
-      this.$nextTick(this.drawLines);
+      var rm = this.roadmaps[index];
+      if (rm && rm.title) this.trackView(rm.title);
+    },
+    trackView(title) {
+      try {
+        fetch('http://localhost:3001/api/views/' + encodeURIComponent(title), { method: 'POST' });
+      } catch (e) { /* ignore */ }
     },
     selectItem(item) {
       this.selectedItem = item;
+      document.body.style.overflow = 'hidden'; // lock scroll while modal open
     },
-    handleClickOutside(event) {
-      const sidebar = this.$refs.sidebar;
-      const clickedOnRoadmapItem = event.target.closest(".roadmap-item");
-
-      if (!sidebar.contains(event.target) && !clickedOnRoadmapItem) {
-        this.selectedItem = null;
-      }
-    },
-    drawLines() {
-      nextTick(() => {
-        const svg = document.getElementById("svgContainer");
-        if (!svg) return;
-
-        svg.innerHTML = ""; // Clear previous lines
-
-        this.selectedRoadmap.roadmap.forEach((item, index) => {
-          const parentElement = document.getElementById(`parent-${index}`).querySelector(".roadmap-item");
-          if (!parentElement) return;
-
-          const svgRect = svg.getBoundingClientRect();
-          const parentRect = parentElement.getBoundingClientRect();
-          const parentX = parentRect.right - svgRect.left;
-          const parentY = parentRect.top - svgRect.top + parentRect.height / 2;
-
-          item.children?.forEach((child, childIndex) => {
-            const childElement = document.getElementById(`child-${index}-${childIndex}`);
-            if (!childElement) return;
-
-            const childRect = childElement.getBoundingClientRect();
-            const childX = childRect.left - svgRect.left;
-            const childY = childRect.top - svgRect.top + childRect.height / 2;
-
-            this.createLine(svg, parentX, parentY, childX, childY);
-          });
-        });
-      });
-    },
-    createLine(svg, x1, y1, x2, y2) {
-      // If the parent and child are at the same Y level, draw a straight line
-      if (y1 === y2) {
-        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-        line.setAttribute("x1", x1);
-        line.setAttribute("y1", y1);
-        line.setAttribute("x2", x2);
-        line.setAttribute("y2", y2);
-        line.setAttribute("stroke", "#0388fc");
-        line.setAttribute("stroke-width", "3");
-        line.setAttribute("stroke-dasharray", "0,6");  // Dashed line pattern (5px dash, 5px gap)
-        line.setAttribute("stroke-linecap", "round");
-        svg.appendChild(line);
-      } else {
-        // Calculate control points for the cubic Bézier curve
-        const controlX1 = x1 + 50;  // Slightly offset for the first control point
-        const controlY1 = y1 + (y2 > y1 ? 50 : -50); // Move the first control point up or down
-
-        const controlX2 = x2 - 50;  // Slightly offset for the second control point
-        const controlY2 = y2 + (y2 > y1 ? -50 : 50); // Move the second control point up or down
-
-        // Create a path element for the cubic Bézier curve
-        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-        const pathData = `M ${x1} ${y1} C ${controlX1} ${controlY1} ${controlX2} ${controlY2} ${x2} ${y2}`;
-        path.setAttribute("d", pathData);  // Set the path data for the Bézier curve
-        path.setAttribute("stroke", "#0388fc");
-        path.setAttribute("stroke-width", "3");
-        path.setAttribute("fill", "transparent");  // Don't fill the curve, just stroke it
-        path.setAttribute("stroke-dasharray", "0,6");  // Dashed line pattern (5px dash, 5px gap)
-        path.setAttribute("stroke-linecap", "round");
-
-        svg.appendChild(path);
-      }
-    },
-  },
+    clearSelectedItem() {
+      this.selectedItem = null;
+      document.body.style.overflow = ''; // unlock scroll
+    }
+  }
 };
-
-
 </script>
 
 <style scoped>
-html,
-body,
-#app {
-  height: 100%;
-  margin: 0;
-}
-
-.roadmap {
-  padding: 20px;
-  text-align: center;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.roadmap-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  flex-grow: 1;
-  position: relative;
-}
-
-.roadmap-item-container {
-  display: flex;
-  align-items: flex-start;
-  margin: 10px;
-  position: relative;
-}
-
-.roadmap-item-parent {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin: 10px;
-}
-
-.roadmap-item {
-  background-color: #ffeb3b;
-  border: 2px solid #fbc02d;
-  border-radius: 12px;
-  padding: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-  white-space: nowrap;
-}
-
-.roadmap-item:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.roadmap-item h2 {
-  font-size: 14px;
-  margin: 0;
-  color: #333;
-}
-
-.roadmap-children {
-  margin-left: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.svg-lines {
-  position: absolute;
-  top: 0;
-  left: 0;
+.modern-roadmap-v2 {
+  display: grid;
+  grid-template-rows: auto 1fr;
   width: 100%;
-  height: 100%;
-  pointer-events: none;
+  height: 100vh;
+  /* full viewport */
+  background: transparent;
+  font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Sidebar Styling */
-.sidebar {
-  position: fixed;
+/* ===== Header (roadmaps list) ===== */
+.rm-header {
+  position: sticky;
   top: 0;
-  right: 0;
-  width: 300px;
-  height: 100%;
-  /* Extend from top to bottom */
-  background-color: #f9f9f9;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  transform: translateX(100%);
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 1000;
-  /* Ensure it is above the overlay */
+  z-index: 10;
+  background: var(--primary-text, #2d2d2d);
+  padding: 10px 16px;
 }
 
-.sidebar.show {
-  transform: translateX(0);
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.sidebar h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.sidebar p {
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-.sidebar-footer {
-  margin-top: 20px;
-}
-
-.sidebar-footer h3 {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-.sidebar-footer ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.sidebar-footer ul li {
-  margin-bottom: 5px;
-}
-
-.sidebar-footer ul li a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.sidebar-footer ul li a:hover {
-  text-decoration: underline;
-}
-
-.roadmap-tabs {
+.rm-header-nav {
   display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+  gap: 10px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
-.roadmap-tabs button {
-  padding: 10px 20px;
+.rm-header-btn {
+  white-space: nowrap;
   border: none;
-  background-color: #ddd;
+  border-radius: 999px;
+  padding: 8px 14px;
   cursor: pointer;
-  margin: 0 5px;
-  border-radius: 5px;
-  transition: background 0.3s;
+  background: var(--primary-background);
+  color: var(--primary-text);
+  opacity: 0.9;
+  transition: opacity .2s, transform .2s;
 }
 
-.roadmap-tabs button.active {
-  background-color: #ffeb3b;
-  font-weight: bold;
+.rm-header-btn:hover {
+  opacity: 1;
+  transform: translateY(-1px);
 }
 
-.roadmap-tabs button:hover {
-  background-color: #fbc02d;
+.rm-header-btn.active {
+  background: var(--primary-background);
+  opacity: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
 }
 
-/* Overlay Styling */
+/* ===== Main content ===== */
+.content {
+  border-radius: 16px;
+  background-color: var(--main-content-bg, transparent);
+  box-sizing: border-box;
+  overflow: hidden;
+  /* prevent scrollbars */
+  min-height: 0;
+  position: relative;
+  padding: 0 10px 60px 10px;
+}
+
+.roadmap-title {
+  font-size: 1.625rem;
+  font-weight: 700;
+  margin: 16px 0 12px 0;
+  text-align: left;
+}
+
+/* ===== Equal-height rows ===== */
+.lanes {
+  height: 100%;
+  display: grid;
+  gap: 32px;
+  grid-template-rows: repeat(var(--rows, 1), minmax(0, 1fr));
+  /* equal heights */
+  padding: 6px 10px 20px 10px;
+}
+
+.lane-row {
+  min-height: 0;
+  /* allow shrinking */
+  overflow: hidden;
+  position: relative;
+}
+
+.lane-row:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 15px;
+  /* moves it into the gap between rows */
+  height: 2px;
+  background: linear-gradient(to right,
+      transparent,
+      rgba(0, 0, 0, 0.12),
+      transparent);
+  border-radius: 1px;
+  pointer-events: none;
+  z-index: 1;
+  /* make sure it's above backgrounds */
+}
+
+.lane-flex {
+  height: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(180px, 1fr);
+  gap: 16px;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+/* ===== Topic Card ===== */
+.topic-card {
+  background: var(--topic-card-bg);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50%;
+  overflow: hidden;
+}
+
+.topic-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.topic-title {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  text-align: left;
+}
+
+.tags {
+  display: flex;
+  justify-content: left;
+  gap: 0.375rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 999px;
+  background: var(--plain-text);
+  color: var(--primary-text);
+  font-weight: 500;
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* ===== Centered Modal ===== */
 .overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  /* Grey out the rest of the screen */
-  z-index: 999;
-  /* Ensure it is below the sidebar */
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, .5);
+  display: grid;
+  place-items: center;
+}
+
+.modal {
+  width: 75vw;
+  max-width: 1200px;
+  height: 75vh;
+  max-height: 900px;
+  background: var(--drawer-bg);
+  color: var(--primary-text);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+  padding: 24px;
+  position: relative;
+  overflow: auto;
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+  background: var(--primary-background);
+  color: var(--primary-text);
+}
+
+.title {
+  margin: 0 40px 8px 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.block {
+  margin-top: 16px;
+}
+
+.block h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.resource-list {
+  list-style: none;
+  padding: 0;
+}
+
+.resource-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.icon {
+  width: 1.5rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* ===== Small screens ===== */
+@media (max-width: 768px) {
+  .topic-card {
+    flex: 1 1 200px;
+    min-width: 140px;
+  }
+
+  .modal {
+    width: 92vw;
+    height: 85vh;
+  }
+}
+
+/* ===== Force full-width breakout ===== */
+.rm-header,
+.content {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.modern-roadmap-v2 .content,
+.modern-roadmap-v2 .lanes {
+  max-width: none !important;
 }
 </style>

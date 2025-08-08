@@ -1,26 +1,20 @@
 <template>
   <div id="app">
     <div class="mode-toggle" v-if="showHeader">
-      <button
-        @click="mode = 'modern'"
-        :class="{ active: mode === 'modern' }"
-      >
+      <button @click="mode = 'modern'" :class="{ active: mode === 'modern' }">
         Roadmap
       </button>
-      <button
-        @click="mode = 'editor'"
-        :class="{ active: mode === 'editor' }"
-      >
+      <button @click="mode = 'horizon'" :class="{ active: mode === 'horizon' }">
+        Roadmap new
+      </button>
+      <button @click="mode = 'editor'" :class="{ active: mode === 'editor' }">
         Create/Edit Roadmap
       </button>
     </div>
 
     <div class="main-content-wrapper">
-      <RoadmapModern
-        v-if="mode === 'modern'"
-        :showHeader="showHeader"
-        @toggle-header="toggleHeaderVisibility"
-      />
+      <RoadmapModern v-if="mode === 'modern'" :showHeader="showHeader" @toggle-header="toggleHeaderVisibility" />
+      <Roadmap v-if="mode === 'horizon'" />
       <RoadmapEditor v-if="mode === 'editor'" />
     </div>
   </div>
@@ -29,17 +23,19 @@
 <script>
 import RoadmapModern from './views/RoadmapModern.vue';
 import RoadmapEditor from './views/RoadmapEditor.vue';
+import Roadmap from './views/Roadmap.vue';
 
 export default {
   name: 'App',
   components: {
     RoadmapModern,
+    Roadmap,
     RoadmapEditor
   },
   data() {
     return {
-      mode: 'modern',
-      showHeader: false, // <-- NOU: Controlăm vizibilitatea header-ului aici
+      mode: 'horizon',
+      showHeader: false,
     };
   },
   methods: {
@@ -75,23 +71,30 @@ export default {
 }
 
 /* Reset de bază pentru a asigura ca totul începe de la 0 */
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
-  height: 100%; /* Important: HTML și Body ocupă înălțimea completă a viewport-ului */
-  overflow: hidden; /* Previne bara de scroll pe html/body */
+  height: 100%;
+  /* Important: HTML și Body ocupă înălțimea completă a viewport-ului */
+  overflow: hidden;
+  /* Previne bara de scroll pe html/body */
 }
 
 #app {
-  height: 100%; /* #app ocupă 100% din înălțimea body */
+  height: 100%;
+  /* #app ocupă 100% din înălțimea body */
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  display: flex; /* Face din #app un container flex */
-  flex-direction: column; /* Organizează elementele pe coloană (header sus, conținut jos) */
-  overflow: hidden; /* Asigură că #app nu va avea scrollbar propriu, ci gestionează intern */
+  display: flex;
+  /* Face din #app un container flex */
+  flex-direction: column;
+  /* Organizează elementele pe coloană (header sus, conținut jos) */
+  overflow: hidden;
+  /* Asigură că #app nu va avea scrollbar propriu, ci gestionează intern */
 }
 
 /* Mode toggle styles (Header) */
@@ -101,10 +104,13 @@ html, body {
   gap: 16px;
   padding: 16px;
   background: #f2f2f2;
-  flex-shrink: 0; /* Previne micșorarea header-ului dacă spațiul este limitat */
+  flex-shrink: 0;
+  /* Previne micșorarea header-ului dacă spațiul este limitat */
   /* Adaugă o margine de jos pentru spațiere */
-  margin-bottom: 20px; /* Sau o altă valoare care să se potrivească cu gap-ul din .modern-roadmap */
+  margin-bottom: 20px;
+  /* Sau o altă valoare care să se potrivească cu gap-ul din .modern-roadmap */
 }
+
 .mode-toggle button {
   padding: 8px 20px;
   font-weight: bold;
@@ -115,10 +121,12 @@ html, body {
   cursor: pointer;
   transition: background 0.3s ease;
 }
+
 .mode-toggle button.active {
   color: #f5f5f5;
   background: #f1682f;
 }
+
 .mode-toggle button:hover {
   background: #f5f5f5;
   color: #f1682f;
@@ -129,8 +137,10 @@ html, body {
 .main-content-wrapper {
   flex-grow: 1;
   display: flex;
-  overflow: hidden; /* Asigură că wrapper-ul gestionează scroll-ul intern */
-  padding: 20px; /* Adaugă padding la stânga, dreapta și JOS */
+  overflow: hidden;
+  /* Asigură că wrapper-ul gestionează scroll-ul intern */
+  padding: 20px;
+  /* Adaugă padding la stânga, dreapta și JOS */
   /* Sus este deja gestionat de margin-bottom al .mode-toggle */
 }
 
@@ -141,6 +151,7 @@ html, body {
     gap: 10px;
     margin-bottom: 10px;
   }
+
   .mode-toggle button {
     padding: 6px 12px;
     font-size: 0.85rem;

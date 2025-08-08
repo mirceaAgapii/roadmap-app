@@ -12,7 +12,7 @@
         </ul>
       </div>
       <span class="header-toggle-button" @click="emitToggleHeader">
-            Toggle Header Visibility
+        Toggle Header Visibility
       </span>
     </aside>
 
@@ -145,20 +145,24 @@ export default {
 <style scoped>
 .modern-roadmap {
   display: grid;
-  grid-template-columns: 250px 1fr; 
-  grid-template-rows: 1fr auto; 
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 1fr auto;
   grid-template-areas:
     "sidebar main"
-    "sidebar details-drawer"; 
+    "sidebar details-drawer";
   font-family: 'Segoe UI', Roboto, sans-serif;
-  background: transparent; /* Setăm fundalul transparent pentru a vedea fundalul App.vue */
-  gap: 20px; /* Spațiere între elementele grilei */
-  padding: 0; /* Padding-ul exterior ar trebui gestionat de .main-content-wrapper din App.vue */
+  background: transparent;
+  /* Setăm fundalul transparent pentru a vedea fundalul App.vue */
+  gap: 20px;
+  /* Spațiere între elementele grilei */
+  padding: 0;
+  /* Padding-ul exterior ar trebui gestionat de .main-content-wrapper din App.vue */
   box-sizing: border-box;
   /* Nou: asigură că .modern-roadmap ocupă tot spațiul disponibil de la părintele său */
   width: 100%;
   height: 100%;
-  overflow: hidden; /* Important pentru a gestiona scroll-ul intern */
+  overflow: hidden;
+  /* Important pentru a gestiona scroll-ul intern */
 }
 
 /* Sidebar */
@@ -173,7 +177,8 @@ export default {
   display: flex;
   flex-direction: column;
   /* NOU: Adaugă o înălțime minimă pentru a asigura spațiu vizual, dar permite să crească */
-  min-height: 200px; /* Ajustează dacă vrei un sidebar mai mic inițial */
+  min-height: 200px;
+  /* Ajustează dacă vrei un sidebar mai mic inițial */
   justify-content: space-between;
 }
 
@@ -182,14 +187,19 @@ export default {
   font-weight: 600;
   margin-bottom: 1rem;
   color: #fdfaff;
-  flex-shrink: 0; /* Împiedică titlul să se micșoreze */
+  flex-shrink: 0;
+  /* Împiedică titlul să se micșoreze */
 }
 
 .roadmap-list-wrapper {
-  flex-grow: 1; /* Permite acestui wrapper să ocupe tot spațiul vertical disponibil */
-  overflow-y: auto; /* Aici va fi scrollbar-ul pentru listă, dacă e prea lungă */
-  margin-bottom: 10px; /* Un pic de spațiu între listă și butonul de jos */
-  -webkit-overflow-scrolling: touch; /* Îmbunătățește scroll-ul pe iOS */
+  flex-grow: 1;
+  /* Permite acestui wrapper să ocupe tot spațiul vertical disponibil */
+  overflow-y: auto;
+  /* Aici va fi scrollbar-ul pentru listă, dacă e prea lungă */
+  margin-bottom: 10px;
+  /* Un pic de spațiu între listă și butonul de jos */
+  -webkit-overflow-scrolling: touch;
+  /* Îmbunătățește scroll-ul pe iOS */
 }
 
 .sidebar ul {
@@ -210,23 +220,29 @@ export default {
 }
 
 .header-toggle-button {
-    /* Folosim aceleași stiluri de bază ca celelalte li, dar le suprascriem */
-    background: transparent !important;
-    color: rgba(255, 255, 255, 0.3) !important; /* Discret */
-    font-size: 0.8rem;
-    text-align: center;
-    box-shadow: none !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linie subtilă de separare */
-    padding-top: 10px; /* Un pic de spațiu de la linie */
-    margin-top: 10px; /* Și spațiu de la elementul de deasupra */
-    border-radius: 0 0 16px 16px; /* Doar colțurile de jos rotunjite, dacă vrei */
-    /* Sau păstrează 10px ca celelalte li dacă preferi */
-    border-radius: 10px;
+  /* Folosim aceleași stiluri de bază ca celelalte li, dar le suprascriem */
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.3) !important;
+  /* Discret */
+  font-size: 0.8rem;
+  text-align: center;
+  box-shadow: none !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  /* Linie subtilă de separare */
+  padding-top: 10px;
+  /* Un pic de spațiu de la linie */
+  margin-top: 10px;
+  /* Și spațiu de la elementul de deasupra */
+  border-radius: 0 0 16px 16px;
+  /* Doar colțurile de jos rotunjite, dacă vrei */
+  /* Sau păstrează 10px ca celelalte li dacă preferi */
+  border-radius: 10px;
 }
 
 .header-toggle-button:hover {
-    color: rgba(255, 255, 255, 0.6) !important; /* Devine mai vizibil la hover */
-    background: transparent !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  /* Devine mai vizibil la hover */
+  background: transparent !important;
 }
 
 .sidebar li.active {
@@ -244,15 +260,19 @@ export default {
 
 /* Main Content */
 .content {
-  grid-area: main; /* Ocupă doar rândul "main" */
+  grid-area: main;
+  /* Ocupă doar rândul "main" */
   display: flex;
   flex-direction: column;
   border-radius: 16px;
   background-color: var(--main-content-bg);
   box-sizing: border-box;
-  overflow-y: auto; /* Scroll vertical pentru conținutul principal */
-  min-height: 0; /* Permite micșorarea */
-  position: relative; /* Pentru a poziționa elemente absolut dacă e cazul */
+  overflow-y: auto;
+  /* Scroll vertical pentru conținutul principal */
+  min-height: 0;
+  /* Permite micșorarea */
+  position: relative;
+  /* Pentru a poziționa elemente absolut dacă e cazul */
   padding: 0 10px;
 }
 
@@ -261,7 +281,8 @@ export default {
   font-weight: 700;
   margin-bottom: 1.5rem;
   text-align: left;
-  flex-shrink: 0; /* Previne micșorarea titlului */
+  flex-shrink: 0;
+  /* Previne micșorarea titlului */
 }
 
 .level-tabs {
@@ -269,7 +290,8 @@ export default {
   gap: 0.75rem;
   margin-bottom: 2rem;
   flex-wrap: wrap;
-  flex-shrink: 0; /* Previne micșorarea butoanelor */
+  flex-shrink: 0;
+  /* Previne micșorarea butoanelor */
 }
 
 .level-tabs button {
@@ -346,16 +368,21 @@ export default {
 
 /* Details Drawer (sertarul de jos) */
 .details-drawer {
-  grid-area: details-drawer; /* Acum are propria sa zonă în grid */
+  grid-area: details-drawer;
+  /* Acum are propria sa zonă în grid */
   background: var(--drawer-bg);
-  border-radius: 16px; /* Colțuri rotunjite */
+  border-radius: 16px;
+  /* Colțuri rotunjite */
   padding: 24px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-  overflow-y: auto; /* Foarte important pentru scroll intern */
+  overflow-y: auto;
+  /* Foarte important pentru scroll intern */
 
   /* NOUL MOD DE A LIMTA ÎNĂLȚIMEA */
-  height: auto; /* Permitem să se adapteze */
-  max-height: 35vh; /* Ocupă maxim 35% din înălțimea viewport-ului */
+  height: auto;
+  /* Permitem să se adapteze */
+  max-height: 35vh;
+  /* Ocupă maxim 35% din înălțimea viewport-ului */
   /* Puteți ajusta '35vh' în funcție de cât de mult doriți să vadă din topic-uri */
 
   text-align: left;
@@ -458,25 +485,37 @@ export default {
     margin: 0 0 15px 0;
     /* NOU: Facem sidebar-ul flex container pentru a aranja lista de roadmaps */
     display: flex;
-    flex-direction: column; /* Asigură că h2 și ul sunt pe coloană */
+    flex-direction: column;
+    /* Asigură că h2 și ul sunt pe coloană */
   }
+
   .sidebar h2 {
-    flex-shrink: 0; /* Previne micșorarea titlului */
-    margin-bottom: 10px; /* Asigură spațiu */
+    flex-shrink: 0;
+    /* Previne micșorarea titlului */
+    margin-bottom: 10px;
+    /* Asigură spațiu */
   }
 
   .sidebar ul {
-    display: flex; /* Face lista de roadmaps să fie un container flex */
+    display: flex;
+    /* Face lista de roadmaps să fie un container flex */
     gap: 10px;
-    overflow-x: auto; /* Aici este cheia: scroll orizontal pe UL */
-    -webkit-overflow-scrolling: touch; /* Îmbunătățește scroll-ul pe iOS */
-    padding-bottom: 5px; /* Adaugă un pic de padding pentru scrollbar, dacă e vizibil */
-    margin-bottom: -5px; /* Compensează padding-ul de jos */
+    overflow-x: auto;
+    /* Aici este cheia: scroll orizontal pe UL */
+    -webkit-overflow-scrolling: touch;
+    /* Îmbunătățește scroll-ul pe iOS */
+    padding-bottom: 5px;
+    /* Adaugă un pic de padding pentru scrollbar, dacă e vizibil */
+    margin-bottom: -5px;
+    /* Compensează padding-ul de jos */
   }
+
   .sidebar li {
-    flex-shrink: 0; /* Important: Fiecare element li nu se va micșora */
+    flex-shrink: 0;
+    /* Important: Fiecare element li nu se va micșora */
     /* NOU: Lățime fixă sau minimă pentru butoane pentru a garanta că nu se taie textul */
-    min-width: 80px; /* Ajustează această valoare după nevoi */
+    min-width: 80px;
+    /* Ajustează această valoare după nevoi */
     /* Dacă vrei ca textul să se încadreze și să nu fie tăiat, poți folosi: */
     /* white-space: normal; */
     /* text-overflow: ellipsis; /* Dar asta necesită overflow: hidden și white-space: nowrap; */
@@ -484,8 +523,10 @@ export default {
     border-bottom: none;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
-    text-align: center; /* Centrează textul în butoane */
+    text-align: center;
+    /* Centrează textul în butoane */
   }
+
   .sidebar li:last-child {
     border-bottom: none;
   }
@@ -495,14 +536,18 @@ export default {
     min-height: 250px;
     /* NOU: Adăugăm flexbox la content pentru a centra grila */
     display: flex;
-    flex-direction: column; /* Păstrează elementele pe coloană */
-    align-items: center; /* Centrează orizontal conținutul */
+    flex-direction: column;
+    /* Păstrează elementele pe coloană */
+    align-items: center;
+    /* Centrează orizontal conținutul */
   }
 
   .roadmap-title,
   .level-tabs {
-    width: 100%; /* Ocupă lățimea disponibilă */
-    text-align: left; /* Asigură alinierea la stânga pentru text */
+    width: 100%;
+    /* Ocupă lățimea disponibilă */
+    text-align: left;
+    /* Asigură alinierea la stânga pentru text */
   }
 
   .level-tabs button {
@@ -512,10 +557,13 @@ export default {
 
   .topics-grid {
     /* NOU: Reintroducem minmax, dar cu o lățime maximă pentru grilă */
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Rămâne la fel ca pe desktop */
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    /* Rămâne la fel ca pe desktop */
     gap: 15px;
-    width: 100%; /* Ocupă lățimea disponibilă în .content */
-    max-width: 600px; /* Limită lățimea maximă a grilei pe ecrane mai mici */
+    width: 100%;
+    /* Ocupă lățimea disponibilă în .content */
+    max-width: 600px;
+    /* Limită lățimea maximă a grilei pe ecrane mai mici */
     /* Centrare va fi dată de align-self pe .content */
   }
 
@@ -529,21 +577,28 @@ export default {
   }
 
   .details-drawer {
-    max-height: 40vh; /* Ajustăm și mai mult pentru a fi mai mic pe mobil */
+    max-height: 40vh;
+    /* Ajustăm și mai mult pentru a fi mai mic pe mobil */
     padding: 20px;
     /* Adăugăm o margine de sus și jos pentru a-l separa de elementele învecinate */
-    margin-top: 15px; /* Margine sus */
-    margin-bottom: 0; /* Lăsăm marginea de jos să vină de la padding-ul main-content-wrapper */
+    margin-top: 15px;
+    /* Margine sus */
+    margin-bottom: 0;
+    /* Lăsăm marginea de jos să vină de la padding-ul main-content-wrapper */
   }
+
   .details-drawer h2 {
     font-size: 1.5rem;
   }
+
   .details-drawer p {
     font-size: 1rem;
   }
+
   .details-drawer h3 {
     font-size: 1.15rem;
   }
+
   .details-drawer li {
     font-size: 1rem;
   }
@@ -561,18 +616,22 @@ export default {
     max-height: 150px;
     margin: 0 0 10px 0;
   }
+
   .sidebar h2 {
     font-size: 1rem;
     margin-bottom: 0.8rem;
   }
+
   .sidebar ul {
     gap: 8px;
     /* min-height: 40px; /* Optional: Asigură o înălțime minimă pentru rândul de butoane */
   }
+
   .sidebar li {
     padding: 6px 10px;
     font-size: 0.9rem;
-    min-width: 70px; /* Ajustează această valoare pentru telefoane */
+    min-width: 70px;
+    /* Ajustează această valoare pentru telefoane */
   }
 
   .content {
@@ -589,6 +648,7 @@ export default {
     gap: 8px;
     margin-bottom: 1rem;
   }
+
   .level-tabs button {
     padding: 6px 12px;
     font-size: 0.85rem;
@@ -603,31 +663,37 @@ export default {
     padding: 12px;
     min-height: 100px;
   }
-  
+
   .topic-title {
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
   }
+
   .tag {
     font-size: 0.7rem;
     padding: 3px 8px;
   }
 
   .details-drawer {
-    max-height: 50vh; /* Ajustăm pentru a lăsa spațiu pentru topic-uri */
+    max-height: 50vh;
+    /* Ajustăm pentru a lăsa spațiu pentru topic-uri */
     padding: 15px;
     margin-top: 10px;
     margin-bottom: 0;
   }
+
   .details-drawer h2 {
     font-size: 1.3rem;
   }
+
   .details-drawer p {
     font-size: 0.9rem;
   }
+
   .details-drawer h3 {
     font-size: 1rem;
   }
+
   .details-drawer li {
     font-size: 0.9rem;
   }

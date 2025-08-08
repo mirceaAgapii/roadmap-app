@@ -1,345 +1,651 @@
 {
-  "generalTitle": "Java",
-  "roadmap": [
+  "road_map_title": "Java",
+  "categories": [
     {
-      "title": "Trainee",
-      "children": [
+      "category_topics": [
         {
-          "title": "Java Fundamentals",
-          "description": "Introduce the essential building blocks of Java programming. Covers understanding what Java is, setting up the environment, learning basic syntax, and writing your first programs.",
-          "subtopics": [
-            {"title": "What is Java?"},
-            {"title": "Installing Java"},
-            {"title": "Java Syntax Basics"},
-            {"title": "Your First Java Program"}
+          "topic_name": "Language & Syntax Essentials",
+          "description": "Placeholder: core Java syntax, types, control flow, OOP pillars.",
+          "sub_topics": [
+            { "title": "Use classes, interfaces, and enums cleanly." },
+            { "title": "Apply inheritance, composition, and polymorphism." },
+            { "title": "Leverage generics and collections effectively." },
+            {
+              "title": "Write readable code with consistent naming and formatting."
+            }
           ],
-          "tags": ["Core"],
           "resources": [
-            {"type": "BOOK", "text": "Effective Java [Joshua Bloch]", "url": ""},
-            {"type": "BOOK", "text": "Java: The Complete Reference [Herbert Schildt]", "url": ""},
-            {"type": "BOOK", "text": "Java 8 in Action. Lambdas, Streams, and functional-style programming [Raoul-Gabriel Urma, Mario Fusco, Alan Mycroft]", "url": ""}
-          ]
+            {
+              "type": "BOOK",
+              "text": "Effective Java [Joshua Bloch]",
+              "url": ""
+            },
+            {
+              "type": "WEBSITE",
+              "text": "Java Language Basics (Oracle Tutorial)",
+              "url": ""
+            },
+            {
+              "type": "VIDEO",
+              "text": "Java Fundamentals Crash Course",
+              "url": ""
+            }
+          ],
+          "tags": ["Core"]
         },
         {
-          "title": "Working with IDEs",
-          "description": "Learn to use modern Java IDEs like IntelliJ IDEA or Eclipse for editing, navigating, running, and debugging code. Get familiar with project setup, code completion, quick fixes, and using built-in terminals.",
-          "subtopics": [
-            {"title": "Setting up your first project in an IDE"},
-            {"title": "Basic navigation and code editing"},
-            {"title": "Running and debugging Java applications"},
-            {"title": "Using code completion and quick fixes"}
+          "topic_name": "Data Storage & Retrieval",
+          "description": "Placeholder: persistence basics, JDBC/ORM, transactions.",
+          "sub_topics": [
+            {
+              "title": "Design data models with performance and consistency in mind."
+            },
+            {
+              "title": "Use ORMs or data access libraries to persist and retrieve data."
+            },
+            {
+              "title": "Understand and use transactions, constraints, and normalization."
+            },
+            {
+              "title": "Choose storage systems based on access patterns and needs."
+            }
           ],
-          "tags": ["Core"],
           "resources": [
-            {"type": "BOOK", "text": "The Well-Grounded Java Developer, Second Edition [Benjamin Evans, Martijn Verburg, Jason Clark]", "url": ""},
-            {"type": "BOOK", "text": "Java: The Complete Reference [Herbert Schildt]", "url": ""}
-          ]
+            {
+              "type": "BOOK",
+              "text": "Java Persistence with JPA (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "WEBSITE",
+              "text": "JDBC & JPA Guides (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "VIDEO",
+              "text": "Spring Data JPA Overview (Placeholder)",
+              "url": ""
+            }
+          ],
+          "tags": ["Core"]
         },
         {
-          "title": "Development Tools & Version Control",
-          "description": "Start using developer tools like the terminal and Git. Learn basic command line usage and version control fundamentals for tracking your code changes.",
-          "subtopics": [
-            {"title": "Using the Terminal"},
-            {"title": "Intro to Git & Version Control"}
+          "topic_name": "Collections & Streams",
+          "description": "Placeholder: Lists, Maps, Sets, stream pipelines, immutability.",
+          "sub_topics": [
+            {
+              "title": "Choose the right collection type based on operations."
+            },
+            { "title": "Use streams for map/filter/reduce safely." },
+            { "title": "Avoid shared mutability in parallel streams." }
           ],
-          "tags": ["Core"],
           "resources": [
-            {"type": "WEBSITE", "text": "Git Cheatsheet – GitHub", "url": "https://training.github.com/downloads/github-git-cheat-sheet/"}
-          ]
+            {
+              "type": "BOOK",
+              "text": "Java 8 in Action (Streams) [Placeholder]",
+              "url": ""
+            },
+            {
+              "type": "WEBSITE",
+              "text": "Collections Framework Overview (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "VIDEO",
+              "text": "Java Streams Crash Course (Placeholder)",
+              "url": ""
+            }
+          ],
+          "tags": ["Core"]
         },
         {
-          "title": "Writing Maintainable Code",
-          "description": "Get introduced to best practices for writing clean, readable, and maintainable Java code, as well as basic debugging to quickly identify and fix errors.",
-          "subtopics": [
-            {"title": "Writing clean, maintainable code"},
-            {"title": "Basic Debugging"}
+          "topic_name": "Error Handling & Exceptions",
+          "description": "Placeholder: checked vs unchecked, wrapping, domain errors.",
+          "sub_topics": [
+            { "title": "Define clear exception hierarchies." },
+            { "title": "Add context when rethrowing exceptions." },
+            { "title": "Avoid swallowing exceptions; log with signal." }
           ],
-          "tags": ["Core"],
           "resources": [
-            {"type": "BOOK", "text": "Clean Code [Robert C. Martin]", "url": ""},
-            {"type": "BOOK", "text": "The Clean Coder [Robert C. Martin]", "url": ""},
-            {"type": "BOOK", "text": "The Well-Grounded Java Developer, Second Edition [Benjamin Evans, Martijn Verburg, Jason Clark]", "url": ""}
-          ]
+            {
+              "type": "BOOK",
+              "text": "Clean Code (Error Handling) [Placeholder]",
+              "url": ""
+            },
+            {
+              "type": "WEBSITE",
+              "text": "Java Exceptions Guide (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "VIDEO",
+              "text": "Effective Exception Handling (Placeholder)",
+              "url": ""
+            }
+          ],
+          "tags": ["Core"]
+        },
+        {
+          "topic_name": "Testing Fundamentals",
+          "description": "Placeholder: unit tests, test doubles, readable assertions.",
+          "sub_topics": [
+            { "title": "Write unit tests for core logic." },
+            { "title": "Use mocks/stubs strategically." },
+            { "title": "Prefer deterministic, isolated tests." },
+            { "title": "Name tests to convey intent." }
+          ],
+          "resources": [
+            {
+              "type": "BOOK",
+              "text": "Pragmatic Unit Testing (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "WEBSITE",
+              "text": "JUnit 5 User Guide (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "VIDEO",
+              "text": "Testing in Java Overview (Placeholder)",
+              "url": ""
+            }
+          ],
+          "tags": ["Core"]
+        },
+        {
+          "topic_name": "Performance Basics",
+          "description": "Placeholder: Big-O intuition, profiling, simple wins first.",
+          "sub_topics": [
+            { "title": "Recognize symptoms of performance issues." },
+            { "title": "Use simple benchmarks for comparisons." },
+            { "title": "Measure before optimizing." }
+          ],
+          "resources": [
+            {
+              "type": "BOOK",
+              "text": "Java Performance Tuning (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "WEBSITE",
+              "text": "JMH Microbenchmark Harness (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "VIDEO",
+              "text": "Intro to Java Profiling (Placeholder)",
+              "url": ""
+            }
+          ],
+          "tags": ["Core"]
         }
       ]
     },
     {
-      "title": "Junior",
-      "children": [
+      "category_topics": [
         {
-          "title": "Core Java & Object-Oriented Concepts",
-          "description": "Solidify your understanding of Java fundamentals, object-oriented principles, and tools for junior-level developers. Learn about the Java language, OOP, collections, streams, generics, and how the Java platform works.",
-          "subtopics": [
-            {"title": "Java fundamentals (syntax, OOP, collections, streams, exception handling, concurrency, generics)"},
-            {"title": "JVM, JDK, JRE Differences"},
-            {"title": "Maven"},
-            {"title": "Build tools: Maven, Gradle"},
-            {"title": "IDEs and plugin ecosystem: IntelliJ IDEA"}
+          "topic_name": "Spring Boot Services",
+          "description": "Placeholder: REST controllers, services, configs, profiles.",
+          "sub_topics": [
+            { "title": "Create REST endpoints with validation." },
+            { "title": "Structure services by domain boundaries." },
+            { "title": "Use configuration properties and profiles." }
           ],
-          "tags": ["Core"],
           "resources": [
-            {"type": "BOOK", "text": "Java 8 in Action. Lambdas, Streams, and functional-style programming [Raoul-Gabriel Urma, Mario Fusco, Alan Mycroft]", "url": ""},
-            {"type": "BOOK", "text": "Effective Java [Joshua Bloch]", "url": ""},
-            {"type": "BOOK", "text": "Java: The Complete Reference [Herbert Schildt]", "url": ""},
-            {"type": "BOOK", "text": "The Well-Grounded Java Developer, Second Edition [Benjamin Evans, Martijn Verburg, Jason Clark]", "url": ""},
-            {"type": "BOOK", "text": "OCP Oracle Certified Professional Java SE 17 Developer Study Guide [Jeanne Boyarsky, Scott Selikoff]", "url": ""}
-          ]
+            {
+              "type": "BOOK",
+              "text": "Spring in Action (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "WEBSITE",
+              "text": "Spring Boot Reference (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "VIDEO",
+              "text": "Spring Boot Crash Course (Placeholder)",
+              "url": ""
+            }
+          ],
+          "tags": ["Focused"]
         },
         {
-          "title": "Development Workflows & SQL Basics",
-          "description": "Learn to use Git for version control, understand basic SQL concepts, and get familiar with essential database tools and debugging workflows.",
-          "subtopics": [
-            {"title": "Git basics, branching strategies"},
-            {"title": "Database clients (DBeaver)"},
-            {"title": "Postman"},
-            {"title": "SQL fundamentals (Joins, Indexing)"},
-            {"title": "Troubleshooting (logs, debugging in production)"}
+          "topic_name": "Messaging & Integration",
+          "description": "Placeholder: JMS/Kafka/RabbitMQ basics, retries, idempotency.",
+          "sub_topics": [
+            { "title": "Produce/consume messages reliably." },
+            { "title": "Implement retry/backoff safely." },
+            { "title": "Design idempotent consumers." }
           ],
-          "tags": ["Core"],
           "resources": [
-            {"type": "WEBSITE", "text": "Git Cheatsheet – GitHub", "url": "https://training.github.com/downloads/github-git-cheat-sheet/"},
-            {"type": "BOOK", "text": "The Phoenix Project: A Novel About IT, DevOps, and Helping Your Business Win [Gene Kim, George Spafford, Kevin Behr]", "url": ""},
-            {"type": "BOOK", "text": "Java: The Complete Reference [Herbert Schildt]", "url": ""}
-          ]
+            {
+              "type": "BOOK",
+              "text": "Enterprise Integration Patterns (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "WEBSITE",
+              "text": "Kafka Concepts (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "VIDEO",
+              "text": "Message-Driven Microservices (Placeholder)",
+              "url": ""
+            }
+          ],
+          "tags": ["Focused"]
         },
         {
-          "title": "Documentation, Testing & Clean Code",
-          "description": "Learn to write and document maintainable code, and understand unit testing, mocking, coverage tools, and the basics of Agile & Scrum.",
-          "subtopics": [
-            {"title": "Writing technical documentation (API Documentation, README, UML, decision logs)"},
-            {"title": "JUnit & Mockito"},
-            {"title": "Unit Testing vs Integration Testing vs End-to-End Testing"},
-            {"title": "Introduction to Mocking"},
-            {"title": "Code coverage tools"},
-            {"title": "Learning Agile & Scrum methodologies"}
+          "topic_name": "Database Performance",
+          "description": "Placeholder: indexing, query plans, batching, N+1 avoidance.",
+          "sub_topics": [
+            { "title": "Analyze query plans to find hotspots." },
+            { "title": "Batch writes and use proper fetch sizes." },
+            { "title": "Avoid N+1 with joins or fetch strategies." }
           ],
-          "tags": ["Core"],
           "resources": [
-            {"type": "BOOK", "text": "JUnit in Action (2nd Edition) [Petar Tahchiev]", "url": ""},
-            {"type": "BOOK", "text": "The Passionate Programmer. Creating a Remarkable Career in Software Development [Chad Fowler]", "url": ""},
-            {"type": "BOOK", "text": "The Clean Coder [Robert C. Martin]", "url": ""},
-            {"type": "BOOK", "text": "The Software Craftsman: Professionalism, Pragmatism, Pride (Robert C. Martin Series) [Sandro Mancuso]", "url": ""},
-            {"type": "BOOK", "text": "Clean Code [Robert C. Martin]", "url": ""}
-          ]
+            {
+              "type": "BOOK",
+              "text": "High-Performance MySQL/Postgres (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "WEBSITE",
+              "text": "JPA Performance Tips (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "VIDEO",
+              "text": "SQL Tuning Basics (Placeholder)",
+              "url": ""
+            }
+          ],
+          "tags": ["Focused"]
+        },
+        {
+          "topic_name": "Security Fundamentals",
+          "description": "Placeholder: authentication, authorization, OWASP, secrets.",
+          "sub_topics": [
+            { "title": "Secure endpoints with method-level rules." },
+            { "title": "Handle secrets via environment/config." },
+            { "title": "Apply OWASP Top 10 mitigations." }
+          ],
+          "resources": [
+            {
+              "type": "BOOK",
+              "text": "Spring Security in Action (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "WEBSITE",
+              "text": "OWASP Top 10 (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "VIDEO",
+              "text": "Security with Spring (Placeholder)",
+              "url": ""
+            }
+          ],
+          "tags": ["Focused"]
+        },
+        {
+          "topic_name": "Observability",
+          "description": "Placeholder: logging, metrics, tracing, dashboards.",
+          "sub_topics": [
+            { "title": "Emit structured logs with correlation IDs." },
+            { "title": "Expose metrics for SLIs/SLOs." },
+            { "title": "Add tracing across service boundaries." }
+          ],
+          "resources": [
+            {
+              "type": "BOOK",
+              "text": "Distributed Systems Observability (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "WEBSITE",
+              "text": "Micrometer & OpenTelemetry (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "VIDEO",
+              "text": "Intro to Observability (Placeholder)",
+              "url": ""
+            }
+          ],
+          "tags": ["Focused"]
+        },
+        {
+          "topic_name": "Caching Strategies",
+          "description": "Placeholder: local vs distributed caches, eviction, coherence.",
+          "sub_topics": [
+            { "title": "Pick cache keys and TTLs deliberately." },
+            { "title": "Consider cache stampede protection." },
+            { "title": "Validate cache hit ratios and staleness." }
+          ],
+          "resources": [
+            {
+              "type": "BOOK",
+              "text": "Caching at Scale (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "WEBSITE",
+              "text": "Spring Cache/Redis Guides (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "VIDEO",
+              "text": "Caching Patterns Explained (Placeholder)",
+              "url": ""
+            }
+          ],
+          "tags": ["Focused"]
+        },
+        {
+          "topic_name": "API Design",
+          "description": "Placeholder: resource modeling, versioning, error envelopes.",
+          "sub_topics": [
+            { "title": "Define consistent request/response shapes." },
+            { "title": "Plan versioning and deprecation." },
+            { "title": "Return meaningful errors (codes, details, trace IDs)." }
+          ],
+          "resources": [
+            {
+              "type": "BOOK",
+              "text": "Designing Web APIs (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "WEBSITE",
+              "text": "REST/HTTP Best Practices (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "VIDEO",
+              "text": "API Design Fundamentals (Placeholder)",
+              "url": ""
+            }
+          ],
+          "tags": ["Focused"]
         }
       ]
     },
     {
-      "title": "Middle",
-      "children": [
+      "category_topics": [
         {
-          "title": "Spring & Persistence Essentials",
-          "description": "Master essential Spring concepts and understand how to persist and manage data in Java applications.",
-          "subtopics": [
-            {"title": "Spring Boot basics (REST APIs, controllers, services)"},
-            {"title": "Spring Data JPA (CRUD operations, Hibernate, JDBC, transaction management)"},
-            {"title": "Spring Security basics (JWT authentication, role-based access)"},
-            {"title": "Spring Profiles & Configurations"},
-            {"title": "Event-driven development: Kafka, RabbitMQ"}
+          "topic_name": "Communication",
+          "description": "Placeholder: concise status updates, active listening, feedback.",
+          "sub_topics": [
+            { "title": "Write clear PR descriptions and commit messages." },
+            { "title": "Tailor communication for devs vs non-devs." },
+            { "title": "Use structured feedback (SBI/COIN) politely." }
           ],
-          "tags": ["Core"],
           "resources": [
-            {"type": "VIDEO", "text": "Spring Boot Crash Course - Java Brains", "url": "https://www.youtube.com/watch?v=msXL2oDexqw"},
-            {"type": "BOOK", "text": "Spring Boot in Action [Craig Walls]", "url": ""},
-            {"type": "BOOK", "text": "Java Persistence with Hibernate [Christian Bauer, Gavin King]", "url": ""},
-            {"type": "BOOK", "text": "RESTful Web Services [Leonard Richardson, Sam Ruby]", "url": ""}
-          ]
+            {
+              "type": "BOOK",
+              "text": "Crucial Conversations (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "WEBSITE",
+              "text": "Tech Writing Tips for Devs (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "VIDEO",
+              "text": "Effective Team Communication (Placeholder)",
+              "url": ""
+            }
+          ],
+          "tags": ["Soft"]
         },
         {
-          "title": "Design Principles & Patterns",
-          "description": "Learn to design software systems using well-established principles and patterns for robust, maintainable, and scalable Java applications.",
-          "subtopics": [
-            {"title": "Basic design patterns (Singleton, Factory, Strategy)"},
-            {"title": "Advanced design patterns (Observer, Builder, CQRS, Event Sourcing)"},
-            {"title": "Understanding SOLID principles"},
-            {"title": "API error handling (global exception handling with @ControllerAdvice)"},
-            {"title": "RESTful API design (JSON, HTTP methods, status codes)"}
+          "topic_name": "Collaboration & Mentoring",
+          "description": "Placeholder: pair programming, code reviews, onboarding.",
+          "sub_topics": [
+            { "title": "Review code for clarity, correctness, and context." },
+            { "title": "Pair program for complex changes." },
+            { "title": "Help onboard teammates with docs and examples." }
           ],
-          "tags": ["Core"],
           "resources": [
-            {"type": "BOOK", "text": "Head First Design Patterns (2nd Edition) [Eric Freeman]", "url": ""},
-            {"type": "WEBSITE", "text": "Refactoring.Guru (Design Patterns)", "url": "https://refactoring.guru/design-patterns"},
-            {"type": "BOOK", "text": "REST API Design Rulebook [Mark Masse]", "url": ""},
-            {"type": "BOOK", "text": "Clean Architecture: A Craftsman's Guide to Software Structure and Design [Robert C. Martin]", "url": ""},
-            {"type": "BOOK", "text": "Clean Code [Robert C. Martin]", "url": ""}
-          ]
+            {
+              "type": "BOOK",
+              "text": "Team Topologies (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "WEBSITE",
+              "text": "Code Review Best Practices (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "VIDEO",
+              "text": "Mentoring for Engineers (Placeholder)",
+              "url": ""
+            }
+          ],
+          "tags": ["Soft"]
         },
         {
-          "title": "Databases & Data Management",
-          "description": "Deepen your understanding of database foundations, data management, and using JPA/Hibernate for ORM in Java.",
-          "subtopics": [
-            {"title": "ORM with JPA/Hibernate"},
-            {"title": "Relational database foundations"},
-            {"title": "PostgreSQL with Spring Data JPA"},
-            {"title": "Transactions, optimistic vs pessimistic locking, indexing, caching strategies"},
-            {"title": "ACID properties"},
-            {"title": "NoSQL foundation"},
-            {"title": "Connection Pooling with HikariCP"},
-            {"title": "Data management & integrity: schema migrations (Flyway, Liquibase)"},
-            {"title": "Backup & Restore basics"}
+          "topic_name": "Problem Solving",
+          "description": "Placeholder: break down problems, hypothesis-first, root cause.",
+          "sub_topics": [
+            { "title": "Define the goal and constraints clearly." },
+            { "title": "List hypotheses and test quickly." },
+            { "title": "Document decisions and trade-offs." }
           ],
-          "tags": ["Core"],
           "resources": [
-            {"type": "BOOK", "text": "Java Persistence with Hibernate [Christian Bauer, Gavin King]", "url": ""},
-            {"type": "BOOK", "text": "Java: The Complete Reference [Herbert Schildt]", "url": ""}
-          ]
+            {
+              "type": "BOOK",
+              "text": "The Pragmatic Programmer (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "WEBSITE",
+              "text": "Root Cause Analysis (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "VIDEO",
+              "text": "Structured Problem Solving (Placeholder)",
+              "url": ""
+            }
+          ],
+          "tags": ["Soft"]
         },
         {
-          "title": "Performance & Optimization",
-          "description": "Understand the Java memory model, learn basic JVM tuning, profiling, and best practices for writing efficient code.",
-          "subtopics": [
-            {"title": "Java memory model (stack, heap), garbage collection basics"},
-            {"title": "Profiling tools: VisualVM, JProfiler"},
-            {"title": "JVM tuning: heap analysis"},
-            {"title": "Lazy initialization"}
+          "topic_name": "Time Management",
+          "description": "Placeholder: prioritization, focus blocks, estimation hygiene.",
+          "sub_topics": [
+            { "title": "Block deep work time on the calendar." },
+            { "title": "Group similar tasks to reduce context-switching." },
+            { "title": "Estimate with ranges and assumptions." }
           ],
-          "tags": ["Core"],
           "resources": [
-            {"type": "BOOK", "text": "Java Performance: The Definitive Guide [Scott Oaks]", "url": ""}
-          ]
+            { "type": "BOOK", "text": "Deep Work (Placeholder)", "url": "" },
+            {
+              "type": "WEBSITE",
+              "text": "Pomodoro/Timeboxing (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "VIDEO",
+              "text": "Estimating for Engineers (Placeholder)",
+              "url": ""
+            }
+          ],
+          "tags": ["Soft"]
         },
         {
-          "title": "DevOps & Infrastructure",
-          "description": "Learn the essentials of modern development workflows, including CI/CD pipelines and working with Docker.",
-          "subtopics": [
-            {"title": "CI/CD: Jenkins, pipelines, artifact management"},
-            {"title": "Docker basics: images, containers, Dockerfile, Docker Compose, volumes"}
+          "topic_name": "Ownership & Reliability Mindset",
+          "description": "Placeholder: own services end-to-end, define SLIs/SLOs, on-call basics.",
+          "sub_topics": [
+            { "title": "Write runbooks and meaningful alerts." },
+            { "title": "Do lightweight postmortems with action items." },
+            { "title": "Think MTTR and user impact." }
           ],
-          "tags": ["Core"],
           "resources": [
-            {"type": "BOOK", "text": "The Phoenix Project: A Novel About IT, DevOps, and Helping Your Business Win [Gene Kim, George Spafford, Kevin Behr]", "url": ""}
-          ]
-        },
-        {
-          "title": "Testing & QA",
-          "description": "Explore different testing strategies and tools for Java development, including TDD and the testing pyramid.",
-          "subtopics": [
-            {"title": "Test-driven development (TDD)"},
-            {"title": "Red-Green-Refactor cycle"},
-            {"title": "Behavior-Driven Development (BDD)"},
-            {"title": "Introduction to Cucumber"}
+            {
+              "type": "BOOK",
+              "text": "Site Reliability Engineering (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "WEBSITE",
+              "text": "SLI/SLO Basics (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "VIDEO",
+              "text": "Reliability Mindset (Placeholder)",
+              "url": ""
+            }
           ],
-          "tags": ["Core"],
-          "resources": [
-            {"type": "BOOK", "text": "JUnit in Action (2nd Edition) [Petar Tahchiev]", "url": ""}
-          ]
-        },
-        {
-          "title": "Refactoring & Complexity",
-          "description": "Learn how to refactor codebases for clarity and maintainability, and understand the basics of time & space complexity.",
-          "subtopics": [
-            {"title": "Refactoring codebases"},
-            {"title": "Understanding Time & Space Complexity"}
-          ],
-          "tags": ["Core"],
-          "resources": [
-            {"type": "WEBSITE", "text": "Refactoring.Guru (Design Patterns)", "url": "https://refactoring.guru/design-patterns"},
-            {"type": "BOOK", "text": "Clean Code [Robert C. Martin]", "url": ""},
-            {"type": "BOOK", "text": "Fundamentals of Software Architecture. An Engineering Approach [Mark Richards, Neal Ford]", "url": ""}
-          ]
+          "tags": ["Soft"]
         }
       ]
     },
     {
-      "title": "Middle+",
-      "children": [
+      "category_topics": [
         {
-          "title": "Advanced Frameworks & Patterns",
-          "description": "Explore advanced topics in Spring, including security, reactive programming, and design patterns for robust and scalable applications.",
-          "subtopics": [
-            {"title": "Advanced Spring Boot: AOP, Spring Security, Spring Cloud"},
-            {"title": "Spring Boot auto-configuration, custom starters"},
-            {"title": "Spring reactive programming: Flux, Mono, WebFlux"},
-            {"title": "Advanced design patterns (Observer, Builder, CQRS, Event Sourcing)"}
+          "topic_name": "Project Methodologies",
+          "description": "Placeholder: Scrum/Kanban rituals, boards, definitions of ready/done.",
+          "sub_topics": [
+            { "title": "Participate in stand-ups, planning, retros, demos." },
+            { "title": "Keep tickets updated and well-scoped." },
+            { "title": "Surface risks and blockers early." }
           ],
-          "tags": ["Core"],
           "resources": [
-            {"type": "BOOK", "text": "Spring Boot in Action [Craig Walls]", "url": ""},
-            {"type": "BOOK", "text": "RESTful Web Services [Leonard Richardson, Sam Ruby]", "url": ""},
-            {"type": "BOOK", "text": "Head First Design Patterns (2nd Edition) [Eric Freeman]", "url": ""},
-            {"type": "WEBSITE", "text": "Refactoring.Guru (Design Patterns)", "url": "https://refactoring.guru/design-patterns"}
-          ]
+            {
+              "type": "BOOK",
+              "text": "Agile Practice Guide (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "WEBSITE",
+              "text": "Scrum Guide (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "VIDEO",
+              "text": "Kanban Overview (Placeholder)",
+              "url": ""
+            }
+          ],
+          "tags": ["Admin"]
         },
         {
-          "title": "Architecture & Distributed Systems",
-          "description": "Master advanced architecture topics, including microservices vs monoliths, distributed systems, and best practices for secure, scalable design.",
-          "subtopics": [
-            {"title": "Monolith vs. Microservices architecture"},
-            {"title": "CAP theorem, distributed transaction strategies (Saga, Outbox pattern)"},
-            {"title": "Clean code principles"},
-            {"title": "Clean architecture principles"}
+          "topic_name": "Documentation & Guidelines",
+          "description": "Placeholder: README, ADRs, diagrams, onboarding docs.",
+          "sub_topics": [
+            { "title": "Document key decisions (ADRs)." },
+            { "title": "Provide runbooks and troubleshooting steps." },
+            { "title": "Keep README and setup scripts current." }
           ],
-          "tags": ["Core"],
           "resources": [
-            {"type": "BOOK", "text": "Fundamentals of Software Architecture. An Engineering Approach [Mark Richards, Neal Ford]", "url": ""},
-            {"type": "BOOK", "text": "Software Architecture Patterns [Mark Richards]", "url": ""},
-            {"type": "BOOK", "text": "Clean Architecture: A Craftsman's Guide to Software Structure and Design [Robert C. Martin]", "url": ""},
-            {"type": "BOOK", "text": "Clean Code [Robert C. Martin]", "url": ""}
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Senior",
-      "children": [
-        {
-          "title": "Performance & Technical Leadership",
-          "description": "Lead teams and projects, optimize performance, and master distributed systems at scale.",
-          "subtopics": [
-            {"title": "Performance benchmarking, concurrency tuning"},
-            {"title": "Distributed Systems"},
-            {"title": "Technical Leadership"}
+            {
+              "type": "BOOK",
+              "text": "Docs for Developers (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "WEBSITE",
+              "text": "Markdown Guide (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "VIDEO",
+              "text": "Doc-Driven Development (Placeholder)",
+              "url": ""
+            }
           ],
-          "tags": ["Core"],
-          "resources": [
-            {"type": "BOOK", "text": "Java Performance: The Definitive Guide [Scott Oaks]", "url": ""},
-            {"type": "BOOK", "text": "Fundamentals of Software Architecture. An Engineering Approach [Mark Richards, Neal Ford]", "url": ""},
-            {"type": "BOOK", "text": "The Software Craftsman: Professionalism, Pragmatism, Pride (Robert C. Martin Series) [Sandro Mancuso]", "url": ""},
-            {"type": "BOOK", "text": "A Philosophy of Software Design, 2nd Edition [Michael T. Nygard]", "url": ""}
-          ]
+          "tags": ["Admin"]
         },
         {
-          "title": "Mentoring & Collaboration",
-          "description": "Support and mentor colleagues, conduct effective code reviews, estimate and plan tasks, and communicate with stakeholders.",
-          "subtopics": [
-            {"title": "Team Mentoring"},
-            {"title": "Code Review Mastery"},
-            {"title": "Leading small technical discussions"},
-            {"title": "Mentoring junior developers"},
-            {"title": "Effective code reviews"},
-            {"title": "Task estimation basics"},
-            {"title": "Stakeholder Communication"},
-            {"title": "Project Estimation & Planning"},
-            {"title": "Release & Deployment Strategy"}
+          "topic_name": "CI/CD Hygiene",
+          "description": "Placeholder: pipelines, branching, quality gates, artifact mgmt.",
+          "sub_topics": [
+            { "title": "Automate build/test/lint as part of CI." },
+            { "title": "Use protected branches and PR checks." },
+            { "title": "Promote artifacts through environments." }
           ],
-          "tags": ["Core"],
           "resources": [
-            {"type": "BOOK", "text": "The Clean Coder [Robert C. Martin]", "url": ""},
-            {"type": "BOOK", "text": "The Software Craftsman: Professionalism, Pragmatism, Pride (Robert C. Martin Series) [Sandro Mancuso]", "url": ""},
-            {"type": "BOOK", "text": "Code Simplicity: The Fundamentals of Software [Max Kanat-Alexander]", "url": ""},
-            {"type": "BOOK", "text": "A Philosophy of Software Design, 2nd Edition [Michael T. Nygard]", "url": ""},
-            {"type": "BOOK", "text": "Soft Skills: The Software Developer’s Life Manual [John Sonmez]", "url": ""},
-            {"type": "VIDEO", "text": "Celeste Headlee: 10 ways to have a better conversation | TED", "url": "https://www.youtube.com/watch?v=R1vskiVDwl4"}
-          ]
+            {
+              "type": "BOOK",
+              "text": "Continuous Delivery (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "WEBSITE",
+              "text": "CI/CD Best Practices (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "VIDEO",
+              "text": "Pipelines 101 (Placeholder)",
+              "url": ""
+            }
+          ],
+          "tags": ["Admin"]
         },
         {
-          "title": "Security & Best Practices",
-          "description": "Master security best practices, from input validation and API versioning to secrets management and error handling.",
-          "subtopics": [
-            {"title": "Input validation, secure API design"},
-            {"title": "Secure authentication: OAuth2, JWT, role-based access control"},
-            {"title": "Sanitizing and encoding outputs"},
-            {"title": "CORS Configuration"},
-            {"title": "API Versioning & Deprecation strategy"},
-            {"title": "Idempotency and safe error responses"},
-            {"title": "Cookies"},
-            {"title": "Password storage, secrets management"}
+          "topic_name": "Access & Compliance",
+          "description": "Placeholder: least privilege, audit trails, PII awareness.",
+          "sub_topics": [
+            { "title": "Request least-privilege access and rotate tokens." },
+            { "title": "Handle user data per policy." },
+            { "title": "Follow code ownership and approvals." }
           ],
-          "tags": ["Core"],
           "resources": [
-            {"type": "BOOK", "text": "Clean Architecture: A Craftsman's Guide to Software Structure and Design [Robert C. Martin]", "url": ""},
-            {"type": "BOOK", "text": "REST API Design Rulebook [Mark Masse]", "url": ""}
-          ]
+            {
+              "type": "BOOK",
+              "text": "Security Compliance for Devs (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "WEBSITE",
+              "text": "Least Privilege Principles (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "VIDEO",
+              "text": "Compliance Basics (Placeholder)",
+              "url": ""
+            }
+          ],
+          "tags": ["Admin"]
+        },
+        {
+          "topic_name": "Environment & Tooling",
+          "description": "Placeholder: ide configs, code style, local stacks, scripts.",
+          "sub_topics": [
+            { "title": "Share IDE/run configs with the team." },
+            { "title": "Standardize code style and hooks." },
+            { "title": "Provide bootstrap scripts for local dev." }
+          ],
+          "resources": [
+            {
+              "type": "BOOK",
+              "text": "Developer Productivity (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "WEBSITE",
+              "text": "Project Tooling Guides (Placeholder)",
+              "url": ""
+            },
+            {
+              "type": "VIDEO",
+              "text": "Local Dev Environments (Placeholder)",
+              "url": ""
+            }
+          ],
+          "tags": ["Admin"]
         }
       ]
     }
